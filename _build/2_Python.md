@@ -19,7 +19,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 This section introduces some of the most relevant aspects of working with Python for social scientists. This includes the different data types available and ways to modify them. 
 
-**Be sure to execute each of the Python code cells as you read the notebook.**
 
 ## Strings
 
@@ -225,8 +224,6 @@ food_lower = food.lower()
 ```
 
 
-food_lower = food.lower()
-
 We can also `replace` text within the string.
 
 
@@ -237,6 +234,16 @@ sentence.replace("Caribbean reef squid", "Velociraptors")
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'Velociraptors have been shown to communicate using a variety of color, shape, and texture changes.'
+```
+
+
+
 `replace` can also be used to remove text without replacement.
 
 
@@ -245,6 +252,16 @@ sentence.replace("Caribbean reef squid", "Velociraptors")
 ```python
 sentence.replace(".", "")
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes'
+```
+
 
 
 As before, this does not alter the original string. If you wanted to save the string edits, you would need to create a new variable.
@@ -263,6 +280,12 @@ print(edited_sentence)
 ```
 
 
+{:.output .output_stream}
+```
+caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.
+
+```
+
 If you were doing a series of manipulations, you could reuse a varaiable name, although it is best practices to keep a version of the original string in case you ever need to go back to it. 
 
 
@@ -277,6 +300,13 @@ print(edited_sentence)
 ```
 
 
+{:.output .output_stream}
+```
+caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.
+caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes
+
+```
+
 You can also stack multiple transformations together, although combining too many may make your code harder to follow.
 
 
@@ -287,30 +317,42 @@ edited_sentence.replace(".", "").lower()
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes'
+```
+
+
+
 #### Exercise
 
 Create a new string called <code>boring</code> that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
 
 
-<details>
 
 
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
-
+{:.input_area}
+```python
 boring = "Way to go!!!".replace('!','').lower()
 print(boring)
-</code>
-Alternatively:
-<code style="background-color: white">
 
+# Alternatively:
 exciting = "Way to go!!!".replace('!','')
 boring   = exciting.replace('!','')
 boring   = boring.lower()
 print(boring)
-</code>
+```
 
-</details>
+
+{:.output .output_stream}
+```
+way to go
+way to go
+
+```
 
 ## Slicing
 
