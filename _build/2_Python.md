@@ -6,7 +6,7 @@ kernel_name: python3
 title: 'Python Basics'
 prev_page:
   url: /1_Setup
-  title: 'Setting Up'
+  title: 'Getting Started'
 next_page:
   url: 
   title: ''
