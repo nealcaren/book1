@@ -89,21 +89,30 @@ print(new_sentence)
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
+## Exercise 1. Create a new string
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code>
+Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
+
+
+
+
+{:.input_area}
+```python
+# Type your answer here
+```
+
+
+
+
+{:.input_area}
+```python
 food = 'I had a pizza for lunch.'
 print(food)
-</code>
-</details>
+```
 
 
-#### Strings
+## String Manipulation
 
 Python has a few tools for manipulating text, such as `lower` for making the string lower-case.
 
