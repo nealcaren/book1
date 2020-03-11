@@ -427,19 +427,15 @@ sentence[-20:]
 
 </div>
 
-<details>
 
 
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+{:.input_area}
+```python
 s = 'The weather is hot and humid today.'
 print(s[:6])
 print(s[-6:])
 print(s[15:-7])
-</code>
-</details>
-
-
+```
 
 
 # Numbers
