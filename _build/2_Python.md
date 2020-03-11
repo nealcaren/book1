@@ -416,16 +416,15 @@ sentence[-20:]
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new string called <code>s</code> that contains <code>The weather is hot and humid today.</code> Find the slices for each of the following :
+#### Exercise
+
+Create a new string called <code>s</code> that contains <code>The weather is hot and humid today.</code> Find the slices for each of the following :
 <ul>
-    <li> <code>The we</code> </item>
+    <li> <code>The we</code> 
     <li> <code>today.</code>
     <li> <code>hot and humid</code>
 </ul>
 
-</div>
 
 
 
