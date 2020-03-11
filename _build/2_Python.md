@@ -429,6 +429,14 @@ Create a new string called `s` that contains `The weather is hot and humid today
 
 {:.input_area}
 ```python
+#Your answer here.
+```
+
+
+
+
+{:.input_area}
+```python
 s = 'The weather is hot and humid today.'
 print(s[:6])
 print(s[-6:])
@@ -446,6 +454,16 @@ We can also count the number of characters in a string with the `len` function.
 ```python
 len(sentence)
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+105
+```
+
 
 
 In this case, Python returned an interger instead of string. This also can be stored in a variable.
@@ -466,22 +484,43 @@ sentence_length
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> What is the length of <code>How many dogs do you own?</code>? Store it in a variable called <code>sl</code>.
-
-</div>
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+
+{:.output .output_data_text}
+```
+105
+```
+
+
+
+#### Exercise.
+
+What is the length of `How many dogs do you own?`? Store it in a variable called `sl`.
+
+
+
+
+{:.input_area}
+```python
+# Your answer here.
+```
+
+
+
+
+{:.input_area}
+```python
 sl = len('How many dogs do you own?')
 print(sl)
-</code>
+```
 
-</details>
 
+{:.output .output_stream}
+```
+25
+
+```
 
 Since this is a number, we can do standard math operations with it.
 
