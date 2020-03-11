@@ -126,7 +126,7 @@ According to Wikipedia, "Caribbean reef squid have been shown to communicate usi
 #### Exercise
 
 
-Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
+Create a new string called `food` that is a sentence about your most recent meal. Display the contents of your new string. 
 
 
 
@@ -218,7 +218,7 @@ lower_sentence
 
 #### Exercise
 
-Create a new, lower cased version of your <code>food</code> string.
+Create a new, lower cased version of your `food` string.
 
 
 
@@ -343,7 +343,7 @@ edited_sentence.replace(".", "").lower()
 
 #### Exercise
 
-Create a new string called <code>boring</code> that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
+Create a new string called `boring` that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
 
 
 
@@ -1041,7 +1041,7 @@ print(food[-1])
 {:.output .output_stream}
 ```
 ['pizza slice', 'naan']
-grape
+box of donuts
 
 ```
 
@@ -1173,9 +1173,9 @@ print(len(food))
 
 {:.output .output_stream}
 ```
-['pizza slice', 'naan', 'cupcake', 'grape', 'panini']
-['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts']
-7
+['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts', 'panini']
+['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts']
+10
 
 ```
 
