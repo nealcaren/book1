@@ -164,21 +164,15 @@ sentence.lower()
 ```
 
 
-{:.output .output_traceback_line}
+
+
+
+{:.output .output_data_text}
+```
+'caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.'
 ```
 
-    ---------------------------------------------------------------------------
 
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-1-447ceedb94c4> in <module>
-    ----> 1 sentence.lower()
-    
-
-    NameError: name 'sentence' is not defined
-
-
-```
 
 This did not alter the original string, however.
 
@@ -188,6 +182,16 @@ This did not alter the original string, however.
 ```python
 sentence
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.'
+```
+
 
 
 In Python, strings are immmutable, meaning once created, they can not be altered in place. We could store the results in a new variable.
@@ -200,6 +204,16 @@ lower_sentence = sentence.lower()
 
 lower_sentence
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.'
+```
+
 
 
 #### Exercise
@@ -368,10 +382,30 @@ sentence
 
 
 
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.'
+```
+
+
+
+
+
 {:.input_area}
 ```python
 sentence[0:20]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid'
+```
+
 
 
 A slice is signaled with brackets (`[]`). The first number is the starting position, where 0 indicates the beginning. This is followed by a colon (`:`) and then the end position, which, in this case, is a 20. Note that this is splitting on characters, not words.
@@ -386,6 +420,16 @@ sentence[20:32]
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+' have been s'
+```
+
+
+
 For convience, if you ommit the number before the colon, it defaults to the string beginning.
 
 
@@ -394,6 +438,16 @@ For convience, if you ommit the number before the colon, it defaults to the stri
 ```python
 sentence[:40]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid have been shown to '
+```
+
 
 
 Ommitting the second number defaults to the end.
@@ -406,6 +460,16 @@ sentence[40:]
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'communicate using a variety of color, shape, and texture changes.'
+```
+
+
+
 Finally, negative numbers are interpreted as distance from the end of the string.
 
 
@@ -414,6 +478,16 @@ Finally, negative numbers are interpreted as distance from the end of the string
 ```python
 sentence[-20:]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'and texture changes.'
+```
+
 
 
 #### Exercise
@@ -443,6 +517,14 @@ print(s[-6:])
 print(s[15:-7])
 ```
 
+
+{:.output .output_stream}
+```
+The we
+today.
+hot and humid
+
+```
 
 # Numbers
 
@@ -532,6 +614,12 @@ print(sentence_length * 3)
 ```
 
 
+{:.output .output_stream}
+```
+315
+
+```
+
 
 
 {:.input_area}
@@ -539,6 +627,12 @@ print(sentence_length * 3)
 print(sentence_length / 2)
 ```
 
+
+{:.output .output_stream}
+```
+52.5
+
+```
 
 
 
@@ -548,18 +642,38 @@ print(sentence_length + sentence_length)
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> What is one-third the length of <code>sl</code>.
+{:.output .output_stream}
+```
+210
 
-</div>
+```
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+#### Exercise
+
+What is one-third the length of `sl`?
+
+
+
+
+{:.input_area}
+```python
+# Your answer here
+```
+
+
+
+
+{:.input_area}
+```python
 print(sl/3)
-</code>
-</details>
+```
+
+
+{:.output .output_stream}
+```
+8.333333333333334
+
+```
 
 As with strings, these can be saved in new variables.
 
@@ -573,6 +687,12 @@ print(double_length)
 ```
 
 
+{:.output .output_stream}
+```
+210
+
+```
+
 These same operators also work with strings.
 
 
@@ -583,6 +703,12 @@ print(sentence * 2)
 ```
 
 
+{:.output .output_stream}
+```
+Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.
+
+```
+
 
 
 {:.input_area}
@@ -590,6 +716,12 @@ print(sentence * 2)
 print(sentence + sentence)
 ```
 
+
+{:.output .output_stream}
+```
+Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.
+
+```
 
 The operators can't be used to combine different data types, however.
 
@@ -601,6 +733,22 @@ print("The sentence was " + sentence_length + "characters.")
 ```
 
 
+{:.output .output_traceback_line}
+```
+
+    ---------------------------------------------------------------------------
+
+    TypeError                                 Traceback (most recent call last)
+
+    <ipython-input-39-9041347a8e39> in <module>
+    ----> 1 print("The sentence was " + sentence_length + "characters.")
+    
+
+    TypeError: can only concatenate str (not "int") to str
+
+
+```
+
 Conviently, Python the `str` function will convert an interger to a string.
 
 
@@ -610,6 +758,12 @@ Conviently, Python the `str` function will convert an interger to a string.
 print("The sentence was " + str(sentence_length) + " characters.")
 ```
 
+
+{:.output .output_stream}
+```
+The sentence was 105 characters.
+
+```
 
 I manually had to include the spaces before and after `sentence_length`. Otherwise, it all is smushed together. 
 
@@ -621,23 +775,42 @@ print("The sentence was" + str(sentence_length) + "characters.")
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p>Print <code>The length of the word "hippopotamus" is [x].</code> where <code>[x]</code> is the length of the word hippopotamus  .
+{:.output .output_stream}
+```
+The sentence was105characters.
 
-</div>
+```
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+#### Exercise
+
+Print `The length of the word "hippopotamus" is [x].` where `[x]` is the length of the word hippopotamus .
+
+
+
+
+{:.input_area}
+```python
+#Your answer here.
+```
+
+
+
+
+{:.input_area}
+```python
 l = len('hippopotamus')
 s = 'The length of the word "hippopotamus" is ' + str(l) + '.'
 print(s)
+```
 
-</code>
-</details>
 
-# Lists
+{:.output .output_stream}
+```
+The length of the word "hippopotamus" is 12.
+
+```
+
+## Lists
 
 We can also `split` the sentence into a series of strings. By default, this splits based on spaces and other whitespace characters such as a line break (`\n`) or tab character (`\t`). 
 
@@ -649,6 +822,12 @@ print(sentence.split())
 ```
 
 
+{:.output .output_stream}
+```
+['Caribbean', 'reef', 'squid', 'have', 'been', 'shown', 'to', 'communicate', 'using', 'a', 'variety', 'of', 'color,', 'shape,', 'and', 'texture', 'changes.']
+
+```
+
 What is returned here is a third data type (the first two were strings and intergers) called a list. A list is enclosed in brackets (`[]`) and the items are seperated by commas. In this case each item is in quotation marks because they are all strings. Items in a list, however, can be of any sort.
 
 
@@ -658,6 +837,16 @@ What is returned here is a third data type (the first two were strings and inter
 my_list = ['Speeches', 7, 'Data']
 my_list
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+['Speeches', 7, 'Data']
+```
+
 
 
 While `len` returned the number of characters in a string, it returns the number the items in a list.
@@ -672,6 +861,16 @@ len(my_list)
 
 
 
+
+{:.output .output_data_text}
+```
+3
+```
+
+
+
+
+
 {:.input_area}
 ```python
 sentence_length = len(sentence.split())
@@ -679,34 +878,44 @@ sentence_length
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+17
+```
+
+
+
 In the second example, the list created by `sentence.split()` is not saved in any way; only its length.
 
+#### Exercise
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a list called <code>food</code> that includes at least three things you ate today. Use <code>len</code> to count the number of items in the list.
+Create a list called `food` that includes at least three things you ate today. Use `len` to count the number of items in the list.
 
-</div>
 
+
+{:.input_area}
+```python
+# Your answer here
+```
 
 
 
 
 {:.input_area}
 ```python
-
-
+food = ['pizza slice', 'naan', 'cupcake', 'grape']
+print(len(food))
 ```
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
-food = ['pizza slice', 'naan', 'cupcake', 'grape']
-print(len(food))
-    
-</code>
-</details>
+{:.output .output_stream}
+```
+4
+
+```
 
 Like, strings, lists can also be sliced. The first three items of a list:
 
@@ -719,6 +928,12 @@ print(words[:3])
 ```
 
 
+{:.output .output_stream}
+```
+['Caribbean', 'reef', 'squid']
+
+```
+
 We can also extract specific items from a list by their position. As it did with strings, slicing in Python starts with 0.
 
 
@@ -727,6 +942,16 @@ We can also extract specific items from a list by their position. As it did with
 ```python
 words[0]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean'
+```
+
 
 
 The third word:
@@ -739,6 +964,16 @@ words[3]
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'have'
+```
+
+
+
 The fifth word from the end:
 
 
@@ -747,6 +982,16 @@ The fifth word from the end:
 ```python
 words[-5]
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'color,'
+```
+
 
 
 The last two words, returned as a list:
@@ -760,22 +1005,45 @@ words[-2:]
 
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p>Display the first two items of your <code>food</code> list. What is the last item?
-
-</div>
 
 
+{:.output .output_data_text}
+```
+['texture', 'changes.']
+```
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+
+
+#### Exercise
+
+Display the first two items of your `food` list. What is the last item?
+
+
+
+
+{:.input_area}
+```python
+# Your answer here
+```
+
+
+
+
+{:.input_area}
+```python
+#Sample Answer 
+
 print(food[:2])
 print(food[-1])
-    
-</code>
-</details>
+```
+
+
+{:.output .output_stream}
+```
+['pizza slice', 'naan']
+grape
+
+```
 
 Unlike a string, lists are mutable. That means that we can remove or as is more frequently the case text analysis, add things to it. This is done with `append`.
 
@@ -789,6 +1057,12 @@ print(male_words)
 ```
 
 
+{:.output .output_stream}
+```
+['his', 'him', 'father', 'brother']
+
+```
+
 Since `append` is changing `male_words`, we do not want to use an `=`. The Python interpreter is editing our original list but not returning anything.
 
 
@@ -800,6 +1074,12 @@ print(not_going_to_work)
 ```
 
 
+{:.output .output_stream}
+```
+None
+
+```
+
 Lists can be also be combined using `+`.
 
 
@@ -810,6 +1090,12 @@ gendered_words = male_words + ['her', 'she', 'mother']
 print(gendered_words)
 ```
 
+
+{:.output .output_stream}
+```
+['his', 'him', 'father', 'brother', 'brother', 'her', 'she', 'mother']
+
+```
 
 As note above, the items in a list can include a variety of data types. This includes lists.
 
@@ -831,6 +1117,16 @@ len(gendered_lists)
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+2
+```
+
+
+
 `gendered_lists` has a length of two because it contains just two items, each a list of varying lengths.
 
 
@@ -841,27 +1137,47 @@ print(gendered_lists)
 ```
 
 
+{:.output .output_stream}
+```
+[['his', 'him', 'father', 'brother', 'brother'], ['her', 'she', 'mother']]
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Add three more items to your <code>food</code>list. Use <code>append</code> for the first item. 
-For the other two, place them in a new list and then combine the two lists. 
+```
 
-</div>
+#### Exercise
+
+Add three more items to your `food` list. Use`append` for the first item. 
+For the other two, place them in a new list and then combine the two lists.
 
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+
+{:.input_area}
+```python
+# Your answer here
+```
+
+
+
+
+{:.input_area}
+```python
+# Sample answer
+
 food.append('panini')
 print(food)
 food = food + ['burrito', 'box of donuts']
 print(food)
 print(len(food))
-    
-</code>
-</details>
+```
+
+
+{:.output .output_stream}
+```
+['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts', 'panini']
+['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts']
+13
+
+```
 
 # Dictionaries
 
