@@ -4,8 +4,8 @@ prev_page:
   url: 
   title: ''
 next_page:
-  url: /https://github.com/nealcaren/book1
-  title: 'GitHub repository'
+  url: /1_Setup
+  title: 'Getting Started'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Books with Jupyter and Jekyll

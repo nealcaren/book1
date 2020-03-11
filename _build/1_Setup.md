@@ -3,10 +3,10 @@ redirect_from:
   - "/1-setup"
 interact_link: content/1_Setup.ipynb
 kernel_name: python3
-title: 'Setting Up'
+title: 'Getting Started'
 prev_page:
-  url: /features/features
-  title: 'Features and customization'
+  url: /intro
+  title: 'Home'
 next_page:
   url: /2_Python
   title: 'Python Basics'
