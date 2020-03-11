@@ -124,7 +124,7 @@ According to Wikipedia, "Caribbean reef squid have been shown to communicate usi
 
 ```
 
-#### Exercise 1. Create a new string
+#### Exercise
 
 
 Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
@@ -203,17 +203,29 @@ lower_sentence
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new, lower cased version of your <code>food</code> string.
-</div>
+#### Exercise
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+Create a new, lower cased version of your <code>food</code> string.
+
+
+
+
+{:.input_area}
+```python
+# Your answer here.
+
+```
+
+
+
+
+{:.input_area}
+```python
 food_lower = food.lower()
-</code>
-</details>
+```
+
+
+food_lower = food.lower()
 
 We can also `replace` text within the string.
 
@@ -275,10 +287,10 @@ edited_sentence.replace(".", "").lower()
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Create a new string called <code>boring</code> that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
-</div>
+#### Exercise
+
+Create a new string called <code>boring</code> that removes the exclamation marks and capitalization from the sentence "Way to go!!!".  
+
 
 <details>
 
@@ -300,7 +312,7 @@ print(boring)
 
 </details>
 
-### Slicing
+## Slicing
 
 If you had a very long text, such as the entire text of a Wikipedia article, you might only want to look at the first few characters. In Python, this is called by slicing.
 
@@ -388,7 +400,7 @@ print(s[15:-7])
 
 
 
-#### Numbers
+# Numbers
 
 We can also count the number of characters in a string with the `len` function.
 
@@ -550,7 +562,7 @@ print(s)
 </code>
 </details>
 
-#### Lists
+# Lists
 
 We can also `split` the sentence into a series of strings. By default, this splits based on spaces and other whitespace characters such as a line break (`\n`) or tab character (`\t`). 
 
@@ -776,7 +788,7 @@ print(len(food))
 </code>
 </details>
 
-#### Dictionaries
+# Dictionaries
 
 A fourth useful data type is a dictionary. A dictionary is like a list in that it holds multiples items. The items in a list can be identified by their position in the list. In contrast, the values in a dictionary are associated with a keyword. The analogy here is a to a physical dictionary, which has a list of unique words, and each word has a definition. In this case, the entries are called keys, and the definitions, which can be any data type, are called values. 
 
@@ -883,7 +895,7 @@ print(respondent)
 ```
 
 
-#### Spaces
+# Spaces
 
 
 Within the Python community, there are strong norms about how code should be written. Many of these are centered around have code be readable, both by others and by your future self. As a trivial example, `2+2` is allowed, but is almost always written `2 + 2`. Likewise, I defined my respondent dictionary with plenty of white space to maximize readability.
@@ -943,7 +955,7 @@ respondents
 
 This now looks a lot like the common data format JSON!
 
-### Loops
+# Loops
 
 
 
@@ -983,7 +995,7 @@ for item in food:
 
 
 
-### Functions
+# Functions
 
 For those who come from Stata or R background, one of the more striking aspects of Python code is the frequency of user-defined functions. These functions are deployed both for cases where you are surprised that no one has already written a function, such as counting words in a sentence, and for highly-custom situations, such as scraping the contents of a particular web page.   Programming with many small functions tends to make code more readable and easier to debug than code written in a more traditional social science style.
 
