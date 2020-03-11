@@ -418,12 +418,11 @@ sentence[-20:]
 
 #### Exercise
 
-Create a new string called <code>s</code> that contains <code>The weather is hot and humid today.</code> Find the slices for each of the following :
-<ul>
-    <li> <code>The we</code> 
-    <li> <code>today.</code>
-    <li> <code>hot and humid</code>
-</ul>
+Create a new string called `s` that contains `The weather is hot and humid today.` Find the slices for each of the following :
+* `The we`
+* `today.`
+* `hot and humid`
+
 
 
 
