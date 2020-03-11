@@ -21,6 +21,9 @@ This section introduces some of the most relevant aspects of working with Python
 
 **Be sure to execute each of the Python code cells as you read the notebook.**
 
+## Strings
+
+
 According to Wikipedia, 
 
 > Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.
@@ -47,6 +50,16 @@ sentence
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.'
+```
+
+
+
 You can get almost the same response using the `print` function:
 
 
@@ -59,6 +72,12 @@ print(sentence)
 ```
 
 
+{:.output .output_stream}
+```
+Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.
+
+```
+
 The only difference is that the first response was wrapped in single quotes and the second wasn’t. As a side note, the single quotes weren’t because you put them there. If you used double quotes, Python would still show a single-quote.
 
 
@@ -69,6 +88,16 @@ sentence =  "Caribbean reef squid have been shown to communicate using a variety
 
 sentence
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes.'
+```
+
 
 
 In addition to `'` and `"`, strings can also be marked with a `'''`. This last one is particularly useful when your text contains contractions or quotation marks. 
@@ -89,7 +118,13 @@ print(new_sentence)
 ```
 
 
-## Exercise 1. Create a new string
+{:.output .output_stream}
+```
+According to Wikipedia, "Caribbean reef squid have been shown to communicate using a variety of color, shape, and texture changes."
+
+```
+
+#### Exercise 1. Create a new string
 
 
 Create a new string called <code>food</code>  that is a sentence about your most recent meal. Display the contents of your new string. 
@@ -112,7 +147,13 @@ print(food)
 ```
 
 
-## String Manipulation
+{:.output .output_stream}
+```
+I had a pizza for lunch.
+
+```
+
+### String Manipulation
 
 Python has a few tools for manipulating text, such as `lower` for making the string lower-case.
 
@@ -123,6 +164,22 @@ Python has a few tools for manipulating text, such as `lower` for making the str
 sentence.lower()
 ```
 
+
+{:.output .output_traceback_line}
+```
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-1-447ceedb94c4> in <module>
+    ----> 1 sentence.lower()
+    
+
+    NameError: name 'sentence' is not defined
+
+
+```
 
 This did not alter the original string, however.
 
