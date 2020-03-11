@@ -152,7 +152,7 @@ I had a pizza for lunch.
 
 ```
 
-### String Manipulation
+## String Manipulation
 
 Python has a few tools for manipulating text, such as `lower` for making the string lower-case.
 
@@ -368,7 +368,7 @@ way to go
 
 ```
 
-## Slicing
+# Slicing
 
 If you had a very long text, such as the entire text of a Wikipedia article, you might only want to look at the first few characters. In Python, this is called by slicing.
 
@@ -740,7 +740,7 @@ print("The sentence was " + sentence_length + "characters.")
 
     TypeError                                 Traceback (most recent call last)
 
-    <ipython-input-39-9041347a8e39> in <module>
+    <ipython-input-41-9041347a8e39> in <module>
     ----> 1 print("The sentence was " + sentence_length + "characters.")
     
 
@@ -1173,9 +1173,9 @@ print(len(food))
 
 {:.output .output_stream}
 ```
-['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts', 'panini']
-['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts', 'panini', 'burrito', 'box of donuts']
-13
+['pizza slice', 'naan', 'cupcake', 'grape', 'panini']
+['pizza slice', 'naan', 'cupcake', 'grape', 'panini', 'burrito', 'box of donuts']
+7
 
 ```
 
@@ -1209,6 +1209,16 @@ respondent['sex']
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'female'
+```
+
+
+
 If the key is not dictionary, you will get a `KeyError`.
 
 
@@ -1218,6 +1228,22 @@ If the key is not dictionary, you will get a `KeyError`.
 respondent['gender']
 ```
 
+
+{:.output .output_traceback_line}
+```
+
+    ---------------------------------------------------------------------------
+
+    KeyError                                  Traceback (most recent call last)
+
+    <ipython-input-69-4da2e0df882d> in <module>
+    ----> 1 respondent['gender']
+    
+
+    KeyError: 'gender'
+
+
+```
 
 You can inspect all the keys in a dictionary, in case you forgot or someone else made it.
 
@@ -1231,10 +1257,30 @@ respondent.keys()
 
 
 
+
+{:.output .output_data_text}
+```
+dict_keys(['sex', 'abany', 'educ'])
+```
+
+
+
+
+
 {:.input_area}
 ```python
 len(respondent.keys())
 ```
+
+
+
+
+
+{:.output .output_data_text}
+```
+3
+```
+
 
 
 Dictionaries are mutable, so we can change the value of existing keys, remove keys, or add new ones.
@@ -1249,6 +1295,12 @@ print(respondent)
 ```
 
 
+{:.output .output_stream}
+```
+{'sex': 'female', 'abany': 1, 'educ': 'College', 'race': 'Black'}
+
+```
+
 
 
 {:.input_area}
@@ -1259,20 +1311,37 @@ print(respondent)
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p>Add a new key to the dictionary called <code>age</code> with a value of 37. Confirm that you did it correctly by dispaying the value of <code>age</code>.
+{:.output .output_stream}
+```
+{'sex': 'female', 'abany': 'Yes', 'educ': 'College', 'race': 'Black'}
 
-</div>
+```
+
+#### Exercise
+Add a new key to the dictionary called `age` with a value of 37. Confirm that you did it correctly by dispaying the value of `age`.
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+
+{:.input_area}
+```python
+# Your answer here.
+```
+
+
+
+
+{:.input_area}
+```python
 respondent['age'] = 37
 print(respondent['age'])
-</code>
-</details>
+```
+
+
+{:.output .output_stream}
+```
+37
+
+```
 
 As noted above, while the keys have to be strings, the values can be any data type.
 
@@ -1285,6 +1354,12 @@ respondent['children ages'] = [3, 5, 10]
 print(respondent)
 ```
 
+
+{:.output .output_stream}
+```
+{'sex': 'female', 'abany': 'Yes', 'educ': 'College', 'race': 'Black', 'age': 37, 'children ages': [3, 5, 10]}
+
+```
 
 # Spaces
 
@@ -1344,6 +1419,19 @@ respondents
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+[{'sex': 'female', 'abany': 1, 'educ': 'College'},
+ {'sex': 'male', 'abany': 1, 'educ': 'College'},
+ {'sex': 'female', 'abany': 0, 'educ': 'High School'},
+ {'sex': 'male', 'abany': 0, 'educ': 'Some College'}]
+```
+
+
+
 This now looks a lot like the common data format JSON!
 
 # Loops
@@ -1357,6 +1445,15 @@ for person in respondents:
 ```
 
 
+{:.output .output_stream}
+```
+College
+College
+High School
+Some College
+
+```
+
 
 
 {:.input_area}
@@ -1366,23 +1463,47 @@ for item in [1,2,'bobcat']:
 ```
 
 
+{:.output .output_stream}
+```
+1
+2
+bobcat
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Loop over the items in your <code>food</code> list. For each item, print its length.
+```
 
-</div>
+#### Exercise
+
+Loop over the items in your `food` list. For each item, print its length.
 
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+{:.input_area}
+```python
+#Your answer here.
+```
+
+
+
+
+{:.input_area}
+```python
 for item in food:
     item_len = len(item)
     print(item_len)
-</code>
-</details>
+```
+
+
+{:.output .output_stream}
+```
+11
+4
+7
+5
+6
+7
+13
+
+```
 
 
 
@@ -1416,6 +1537,16 @@ make_hello()
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'Hello!'
+```
+
+
+
 More commonly in text analysis, a user-defined function modifies an existing string. In this case, the variable name that will be used within the function is established within the parenthesis on the opening line. 
 
 A second trivial function takes a text string and returns an all-caps version. 
@@ -1438,6 +1569,16 @@ scream('Hi there!')
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'HI THERE!'
+```
+
+
+
 ![](https://raw.githubusercontent.com/nealcaren/UiOBigData/master/notebooks/images/function.png)
 
 The `text` and `text_upper` variable only exist within the function. That means that you can pass a variable not called `text` to the function.
@@ -1450,6 +1591,16 @@ scream(sentence)
 ```
 
 
+
+
+
+{:.output .output_data_text}
+```
+'CARIBBEAN REEF SQUID HAVE BEEN SHOWN TO COMMUNICATE USING A VARIETY OF COLOR, SHAPE, AND TEXTURE CHANGES.'
+```
+
+
+
 It also means that everything but the returned `text` disappears.
 
 
@@ -1459,6 +1610,22 @@ It also means that everything but the returned `text` disappears.
 text_upper
 ```
 
+
+{:.output .output_traceback_line}
+```
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-91-9374ae9251ac> in <module>
+    ----> 1 text_upper
+    
+
+    NameError: name 'text_upper' is not defined
+
+
+```
 
 It is a good idea to include a comment within the function that explains the function. This is helpful for other people reading your code and when you return to your own code months and days later.
 
@@ -1473,15 +1640,16 @@ def scream(text):
 ```
 
 
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Make a function call "whisper" that replaces all exclamation marks with a period and returns a lower case version of a string. Test it out.
-</div>
+#### Exercise
+
+Make a function call "whisper" that replaces all exclamation marks with a period and returns a lower case version of a string. Test it out.
 
 
 
 {:.input_area}
 ```python
+#Your answer here.
+
 def whisper(text):
     ''''''
     
@@ -1489,21 +1657,30 @@ def whisper(text):
 ```
 
 
-<details>
-<summary>Sample answer code</summary> 
-<code style="background-color: white">
+
+
+{:.input_area}
+```python
 def whisper(text):
     '''Lower case string and replace
        ! with .'''
     quiet_text = text.replace('!','.')
     quiet_text = quiet_text.lower()
     return quiet_text
-</code>
 
-Testing it out:
-<code style="background-color: white">
+#Testing it out: 
 whisper('ASDFASDFAS!')
-    
-</details>
+```
+
+
+
+
+
+{:.output .output_data_text}
+```
+'asdfasdfas.'
+```
+
+
 
 Congratulations! You've now been introduced to the basics of Python for social scientists.
