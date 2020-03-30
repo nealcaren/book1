@@ -1,0 +1,193 @@
+---
+interact_link: content/setup.ipynb
+kernel_name: python3
+kernel_path: content
+has_widgets: false
+title: |-
+  Getting Started
+pagenum: 0
+prev_page:
+  url: 
+next_page:
+  url: /python.html
+suffix: .ipynb
+search: python notebook code anaconda jupyter server www scientific open launch cell should languages matlab available new set computing distribution continuum while navigator caltech edu window terminal screen environment io work also used below org text called application rpgroup bige images png once start page com why language computer its c r very source packages science such just name installing several windows data install correct version follow instructions navigate download installer browser program only writing json formatted launched command line gui launching tab shown red clicking simply typing folder default localhost note kernel click kernels choose box background bi setup before
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Getting Started</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Setup">Setup<a class="anchor-link" href="#Setup"> </a></h1><p>Before attending the workshp you should set up a scientific Python computing environment using the <a href="https://www.continuum.io/downloads">Anaconda python distribution by Continuum Analytics</a>. This page describes how. If this doesn't work, let <a href="mailto:neal.caren@gmail.com">me</a> know and I will set you up with a virtual environment you can use on my server.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-Python?">Why Python?<a class="anchor-link" href="#Why-Python?"> </a></h2><p>As is true in human language, there are hundreds of computer programming languages. While each has its own merit, the major languages for scientific computing are C, C++, R, MATLAB, Python, Java, and Fortran. MATLAB and Python are similar in syntax and typically read as if they were written in plain english. This makes both languages a useful tool for teaching but they are also very powerful languages and are very actively used in real-life research. MATLAB is proprietary while Python is open source. A benefit of being open source is that anyone can write and release Python packages. For science, there are many wonderful community-driven packages such as NumPy, SciPy, scikit-image, and Pandas just to name a few.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Installing-Python-3.7-with-Anaconda">Installing Python 3.7 with Anaconda<a class="anchor-link" href="#Installing-Python-3.7-with-Anaconda"> </a></h2><p>There are several scientific Python distributions available for MacOS, Windows, and Linux. The  most popular, <a href="https://www.continuum.io/why-anaconda">Anaconda</a>, is specifically designed for scientific computing and data science work. For this course, we will use the Anaconda Python 3.7 distribution. To install the correct version, follow the instructions below.</p>
+<ol>
+<li>Navigate to the <a href="https://www.anaconda.com/distribution/">Anaconda download page</a> and download the Python 3.7 graphical installer.</li>
+<li>Launch the installer and follow the onscreen instructions.</li>
+<li>Congratulations! You now have the beginnings of a scientific Python distribution.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-a-Jupyter-notebook?">What is a Jupyter notebook?<a class="anchor-link" href="#What-is-a-Jupyter-notebook?"> </a></h2><p><a href="http://jupyter.org/">Jupyter</a> is a browser-based system to write code, math, and text in the same document so you can clearly explain the concepts and practices used in your program. Jupyter is not only for Python, but can be used with R, Juila, MATLAB, and about 35 other languages as of this writing. All files are saved as a <a href="http://www.json.org/">JSON</a> formatted text file with the extension <code>.ipynb</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-launch-the-notebook">How to launch the notebook<a class="anchor-link" href="#How-to-launch-the-notebook"> </a></h2><p>A Jupyter Notebook server can either be launched from the command line or from a GUI program installed along with anaconda called Navigator.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Launching-from-the-Anaconda-Navigator">Launching from the Anaconda Navigator<a class="anchor-link" href="#Launching-from-the-Anaconda-Navigator"> </a></h3><p>Installing Python 3 from Anaconda should also install a GUI application called <a href="https://docs.continuum.io/anaconda/navigator">Anaconda Navigator</a>. From here, you can launch several applications such as a QTconsole, the Spyder IDE, and a data visualization software called GlueViz. We are interested in the Jupyter Notebook application tab, which is shown boxed in red below:</p>
+<p><img src="http://www.rpgroup.caltech.edu/bige105/code/images/anaconda_navigator.png" alt=""></p>
+<p>By clicking on 'Launch', you will instantiate a Jupyter notebook server which should open in a new window.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Launching-from-the-terminal">Launching from the terminal<a class="anchor-link" href="#Launching-from-the-terminal"> </a></h3><p>To launch a notebook server from the command line, simply open a terminal emulator (Terminal.app on OSX or gitbash on windows) and navigate to the directory you would like to set up a server by typing <code>cd path/to/folder</code>
+Once you are in the correct folder, you can launch a notebook server by typing:</p>
+
+<pre><code>jupyter notebook</code></pre>
+<p>This will open a screen in your default internet browser with a server containing your notebooks. Its address will be <a href="http://localhost:8888/"><code>http://localhost:8888</code></a> and is only available on your computer. <strong>Note that once you start a server, you must keep the terminal window open.</strong> This is where the 'guts' of the python kernel is.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Interacting-with-the-notebook">Interacting with the notebook<a class="anchor-link" href="#Interacting-with-the-notebook"> </a></h2><p>If everything launched correctly, you should be able to see a screen which looks something like this:</p>
+<p><img src="http://www.rpgroup.caltech.edu/bige105/code/images/starting_notebook.png" alt=""></p>
+<p>To start a new python window, click on the right-hand side of the application window and select <code>New</code>. This will give you a bunch of options for new notebook kernels. In the above screen shot, there are two available Python kernels and one Matlab kernel. When starting a notebook, you should choose <code>Python 3</code> if it is available. If you have just a tab that says "Python", choose that one.</p>
+<p>Once you start a new notebook, you will be brought to the following screen.</p>
+<p><img src="http://www.rpgroup.caltech.edu/bige105/code/images/toolbars.png" alt=""></p>
+<p>Welcome to the Jupyter notebook! There are many available buttons for you to click. However, the three most important components of the notebook are highlighted in colored boxes. In blue is the name of the notebook. By clicking this, you can rename the notebook. In red is the cell formatting assignment. By default, it is registered as code, but it can also be set to markdown as described later.</p>
+<p>Finally, in purple, is the code cell. In this cell, you can type an execute Python code as well as text that will be formatted in a nicely readable format.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Writing-code">Writing code<a class="anchor-link" href="#Writing-code"> </a></h2><p>All code you write in the notebook will be in the code cell. You can write single lines, to entire loops, to complete functions. As an example, we can write and evaluate a print statement in a code cell, as is shown below. To exectue the code, we can simply hit <code>shift + enter</code> while our cursor is in the code cell.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># This is a comment and is not read by Python</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello! This is the print function. Python will print this line below&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The box with the gray background contains the python code while the output is in the box with the white background.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Next-Steps">Next Steps<a class="anchor-link" href="#Next-Steps"> </a></h2><p>Now that you have a Python environment up and running, proceed to the [Python] notebook to learn the basics of the language.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Note: This is a modified version of Griffin Chure's <a href="http://bi1.caltech.edu/code/t0a_setting_up_python.html">Setting Up Python For Scientific Computing for Bi 1 - Principles of Biology</a>. This work is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License CC-BY 4.0</a>.</em></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
