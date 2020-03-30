@@ -21,7 +21,7 @@
 #
 # See the links below for an example.
 
-## Top-level page
+# Top-level page
 #- title: Home
 #  url: /intro
 #  not_numbered: true
@@ -37,7 +37,7 @@
   search: true
 
 # Divider for meta-pages and content page
-- divider: true
+- divider: false
 
 # Add a header and sample content section
 #- header: Setup
@@ -51,6 +51,6 @@
   - title: Python Basics
     url: /python
     not_numbered: true
-  - title: Pandas Basics
+  - title: pandas Basics
     url: /pandas
     not_numbered: true

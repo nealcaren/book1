@@ -4,32 +4,22 @@ kernel_name: python3
 kernel_path: content
 has_widgets: false
 title: |-
-  Pandas Basics
+  pandas Basics
 pagenum: 2
 prev_page:
   url: /python.html
 next_page:
   url: 
 suffix: .ipynb
-search: dataframe pandas data div alert h new series also create info variable column p values want df index class turn method case cases name encoding rows list csv file readcsv default columns code value titanic python using such need used specific display plots plotting before provides store useful com parameter web not iso windows after head row dataset only variables rather since returns crosstab based just analysis both pd displayed washingtonpost homicide called pydata org docs stable html characters set x sense methods wanted order plot plotted option very different subset original where true brackets merge section introduction library key
+search: dataframe data pandas new column series also create variable div df index values alert h want method rows name cases value info case returns titanic list using readcsv columns p store file default row display plots plotting class turn before provides python useful csv called after head methods dataset only wanted exercise specific brackets order such rather since crosstab based just key analysis both pd displayed washingtonpost com homicide pydata org docs stable html parameter sense sample describe random not used variables valuecounts victimrace results code plot plotted option very different need subset original where true merge section introduction library
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
     <main class="jupyter-page">
-    <div id="page-info"><div id="page-title">Pandas Basics</div>
+    <div id="page-info"><div id="page-title">pandas Basics</div>
 </div>
     <div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="pandas">pandas<a class="anchor-link" href="#pandas"> </a></h2>
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -58,7 +48,9 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 
     </div>
@@ -72,7 +64,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Reading-data">Reading data<a class="anchor-link" href="#Reading-data"> </a></h3>
+<h1 id="Reading-data">Reading data<a class="anchor-link" href="#Reading-data"> </a></h1>
 </div>
 </div>
 </div>
@@ -108,990 +100,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="jb_cell">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>uid</th>
-      <th>reported_date</th>
-      <th>victim_last</th>
-      <th>victim_first</th>
-      <th>victim_race</th>
-      <th>victim_age</th>
-      <th>victim_sex</th>
-      <th>city</th>
-      <th>state</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>disposition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Alb-000001</td>
-      <td>20100504</td>
-      <td>GARCIA</td>
-      <td>JUAN</td>
-      <td>Hispanic</td>
-      <td>78.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.095788</td>
-      <td>-106.538555</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Alb-000002</td>
-      <td>20100216</td>
-      <td>MONTOYA</td>
-      <td>CAMERON</td>
-      <td>Hispanic</td>
-      <td>17.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.056810</td>
-      <td>-106.715321</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Alb-000003</td>
-      <td>20100601</td>
-      <td>SATTERFIELD</td>
-      <td>VIVIANA</td>
-      <td>White</td>
-      <td>15.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.086092</td>
-      <td>-106.695568</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Alb-000004</td>
-      <td>20100101</td>
-      <td>MENDIOLA</td>
-      <td>CARLOS</td>
-      <td>Hispanic</td>
-      <td>32.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.078493</td>
-      <td>-106.556094</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Alb-000005</td>
-      <td>20100102</td>
-      <td>MULA</td>
-      <td>VIVIAN</td>
-      <td>White</td>
-      <td>72.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.130357</td>
-      <td>-106.580986</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Alb-000006</td>
-      <td>20100126</td>
-      <td>BOOK</td>
-      <td>GERALDINE</td>
-      <td>White</td>
-      <td>91.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.151110</td>
-      <td>-106.537797</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Alb-000007</td>
-      <td>20100127</td>
-      <td>MALDONADO</td>
-      <td>DAVID</td>
-      <td>Hispanic</td>
-      <td>52.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.111785</td>
-      <td>-106.712614</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Alb-000008</td>
-      <td>20100127</td>
-      <td>MALDONADO</td>
-      <td>CONNIE</td>
-      <td>Hispanic</td>
-      <td>52.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.111785</td>
-      <td>-106.712614</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Alb-000009</td>
-      <td>20100130</td>
-      <td>MARTIN-LEYVA</td>
-      <td>GUSTAVO</td>
-      <td>White</td>
-      <td>56.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.075380</td>
-      <td>-106.553458</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Alb-000010</td>
-      <td>20100210</td>
-      <td>HERRERA</td>
-      <td>ISRAEL</td>
-      <td>Hispanic</td>
-      <td>43.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.065930</td>
-      <td>-106.572288</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Alb-000011</td>
-      <td>20100212</td>
-      <td>BARRIUS-CAMPANIONI</td>
-      <td>HECTOR</td>
-      <td>Hispanic</td>
-      <td>20.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.077375</td>
-      <td>-106.560569</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Alb-000012</td>
-      <td>20100218</td>
-      <td>LUJAN</td>
-      <td>KEVIN</td>
-      <td>White</td>
-      <td>NaN</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.077011</td>
-      <td>-106.564910</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Alb-000013</td>
-      <td>20100222</td>
-      <td>COLLAMORE</td>
-      <td>JOHN</td>
-      <td>Hispanic</td>
-      <td>46.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.064076</td>
-      <td>-106.608281</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>Alb-000014</td>
-      <td>20100306</td>
-      <td>CHIQUITO</td>
-      <td>CORIN</td>
-      <td>Other</td>
-      <td>16.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.041491</td>
-      <td>-106.742147</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Alb-000015</td>
-      <td>20100308</td>
-      <td>TORRES</td>
-      <td>HECTOR</td>
-      <td>Hispanic</td>
-      <td>54.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.070656</td>
-      <td>-106.615845</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>Alb-000016</td>
-      <td>20100308</td>
-      <td>GRAY</td>
-      <td>STEFANIA</td>
-      <td>White</td>
-      <td>43.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.070656</td>
-      <td>-106.615845</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Alb-000017</td>
-      <td>20100322</td>
-      <td>LEYVA</td>
-      <td>JOEL</td>
-      <td>Hispanic</td>
-      <td>52.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.079082</td>
-      <td>-106.495949</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Alb-000018</td>
-      <td>20100323</td>
-      <td>DAVID</td>
-      <td>LARRY</td>
-      <td>White</td>
-      <td>52.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Alb-000019</td>
-      <td>20100402</td>
-      <td>BRITO</td>
-      <td>ELIZABETH</td>
-      <td>White</td>
-      <td>22.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.110404</td>
-      <td>-106.523668</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Alb-000020</td>
-      <td>20100420</td>
-      <td>CHAVEZ</td>
-      <td>GREG SR.</td>
-      <td>Hispanic</td>
-      <td>49.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.089573</td>
-      <td>-106.570078</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Alb-000021</td>
-      <td>20100423</td>
-      <td>KING</td>
-      <td>TEVION</td>
-      <td>Black</td>
-      <td>15.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.095887</td>
-      <td>-106.638081</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Alb-000022</td>
-      <td>20100423</td>
-      <td>BOYKIN</td>
-      <td>CEDRIC</td>
-      <td>Black</td>
-      <td>25.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.095887</td>
-      <td>-106.638081</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Alb-000023</td>
-      <td>20100518</td>
-      <td>BARRAGAN</td>
-      <td>MIGUEL</td>
-      <td>White</td>
-      <td>20.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.083401</td>
-      <td>-106.632941</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>Alb-000024</td>
-      <td>20100602</td>
-      <td>FORD</td>
-      <td>LUTHER</td>
-      <td>Other</td>
-      <td>47.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.102423</td>
-      <td>-106.567674</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Alb-000025</td>
-      <td>20100602</td>
-      <td>WRONSKI</td>
-      <td>VIOLA</td>
-      <td>White</td>
-      <td>88.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.095956</td>
-      <td>-106.561135</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Alb-000026</td>
-      <td>20100603</td>
-      <td>ASHFORD</td>
-      <td>GUADALUPE</td>
-      <td>Hispanic</td>
-      <td>27.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.078462</td>
-      <td>-106.551755</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Alb-000027</td>
-      <td>20100712</td>
-      <td>TURNER</td>
-      <td>MICHELLE</td>
-      <td>White</td>
-      <td>36.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.053748</td>
-      <td>-106.531800</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>Alb-000028</td>
-      <td>20100712</td>
-      <td>CUNNINGHAM</td>
-      <td>SHARON</td>
-      <td>White</td>
-      <td>47.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.053748</td>
-      <td>-106.531800</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>Alb-000029</td>
-      <td>20100726</td>
-      <td>NGUYEN</td>
-      <td>SELENAVI</td>
-      <td>Asian</td>
-      <td>1.0</td>
-      <td>Female</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.064456</td>
-      <td>-106.524458</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>Alb-000030</td>
-      <td>20100728</td>
-      <td>VALDEZ</td>
-      <td>BILL</td>
-      <td>Hispanic</td>
-      <td>58.0</td>
-      <td>Male</td>
-      <td>Albuquerque</td>
-      <td>NM</td>
-      <td>35.061827</td>
-      <td>-106.749104</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>52149</th>
-      <td>Was-001353</td>
-      <td>20160324</td>
-      <td>TURNER</td>
-      <td>GABRIEL</td>
-      <td>Black</td>
-      <td>46.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.857628</td>
-      <td>-76.996482</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52150</th>
-      <td>Was-001355</td>
-      <td>20160518</td>
-      <td>MERIEDY</td>
-      <td>THOMAS</td>
-      <td>Black</td>
-      <td>24.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.862517</td>
-      <td>-76.990880</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52151</th>
-      <td>Was-001356</td>
-      <td>20160906</td>
-      <td>COOK</td>
-      <td>JOE</td>
-      <td>Black</td>
-      <td>35.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.854721</td>
-      <td>-76.990795</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52152</th>
-      <td>Was-001357</td>
-      <td>20160917</td>
-      <td>PHILLIPS</td>
-      <td>SCORPIO</td>
-      <td>Black</td>
-      <td>31.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.877003</td>
-      <td>-76.995627</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52153</th>
-      <td>Was-001358</td>
-      <td>20160917</td>
-      <td>HARRIS</td>
-      <td>ZORUAN</td>
-      <td>Black</td>
-      <td>18.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.877003</td>
-      <td>-76.995627</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52154</th>
-      <td>Was-001359</td>
-      <td>20161108</td>
-      <td>PRATT</td>
-      <td>ANTINA</td>
-      <td>Black</td>
-      <td>40.0</td>
-      <td>Female</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.855699</td>
-      <td>-76.993248</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52155</th>
-      <td>Was-001360</td>
-      <td>20161127</td>
-      <td>SILVER</td>
-      <td>ORLANDO</td>
-      <td>Black</td>
-      <td>37.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.860054</td>
-      <td>-76.991825</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52156</th>
-      <td>Was-001361</td>
-      <td>20160304</td>
-      <td>REZENE</td>
-      <td>NOEL</td>
-      <td>Black</td>
-      <td>26.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.849150</td>
-      <td>-76.971272</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52157</th>
-      <td>Was-001362</td>
-      <td>20160511</td>
-      <td>DRAYTON</td>
-      <td>JAVION</td>
-      <td>Black</td>
-      <td>3.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.853961</td>
-      <td>-76.984712</td>
-      <td>Closed without arrest</td>
-    </tr>
-    <tr>
-      <th>52158</th>
-      <td>Was-001363</td>
-      <td>20160702</td>
-      <td>MCCULLOUGH</td>
-      <td>ANTOINE</td>
-      <td>Black</td>
-      <td>30.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.843740</td>
-      <td>-76.977839</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52159</th>
-      <td>Was-001365</td>
-      <td>20161111</td>
-      <td>BUIE</td>
-      <td>SAMUELLE</td>
-      <td>Black</td>
-      <td>25.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.851284</td>
-      <td>-76.981029</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52160</th>
-      <td>Was-001366</td>
-      <td>20161111</td>
-      <td>JENNINGS</td>
-      <td>RASSAAN</td>
-      <td>Black</td>
-      <td>19.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.851284</td>
-      <td>-76.981029</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52161</th>
-      <td>Was-001367</td>
-      <td>20161122</td>
-      <td>TYLER</td>
-      <td>MARQUETT</td>
-      <td>Black</td>
-      <td>26.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.849967</td>
-      <td>-76.974421</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52162</th>
-      <td>Was-001368</td>
-      <td>20160302</td>
-      <td>GARRIS</td>
-      <td>RUDOLPH</td>
-      <td>Black</td>
-      <td>25.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.827191</td>
-      <td>-76.998183</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52163</th>
-      <td>Was-001369</td>
-      <td>20160317</td>
-      <td>DANSBURY</td>
-      <td>AUBREY</td>
-      <td>Black</td>
-      <td>27.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.829442</td>
-      <td>-76.993175</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52164</th>
-      <td>Was-001370</td>
-      <td>20160510</td>
-      <td>HANEY</td>
-      <td>JAQUAN</td>
-      <td>Black</td>
-      <td>22.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.833943</td>
-      <td>-76.990742</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52165</th>
-      <td>Was-001371</td>
-      <td>20160519</td>
-      <td>HAMILTON</td>
-      <td>DANA</td>
-      <td>Black</td>
-      <td>44.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.828365</td>
-      <td>-76.994431</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52166</th>
-      <td>Was-001372</td>
-      <td>20160609</td>
-      <td>WRIGHT</td>
-      <td>RASHAWN</td>
-      <td>Black</td>
-      <td>25.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.835947</td>
-      <td>-76.990438</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52167</th>
-      <td>Was-001373</td>
-      <td>20160626</td>
-      <td>BLACKWELL</td>
-      <td>WESTLEY</td>
-      <td>Black</td>
-      <td>38.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.834756</td>
-      <td>-76.992662</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52168</th>
-      <td>Was-001374</td>
-      <td>20161227</td>
-      <td>DOWTIN</td>
-      <td>HERBERT</td>
-      <td>Black</td>
-      <td>22.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.833190</td>
-      <td>-76.994345</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52169</th>
-      <td>Was-001375</td>
-      <td>20160224</td>
-      <td>MEDLAY</td>
-      <td>DEMETRIUS</td>
-      <td>Black</td>
-      <td>22.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.843399</td>
-      <td>-77.000104</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52170</th>
-      <td>Was-001376</td>
-      <td>20160731</td>
-      <td>STEPHENS</td>
-      <td>JUDONNE</td>
-      <td>Black</td>
-      <td>25.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.863322</td>
-      <td>-76.995309</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52171</th>
-      <td>Was-001377</td>
-      <td>20160916</td>
-      <td>PEOPLES</td>
-      <td>DARNELL</td>
-      <td>Black</td>
-      <td>35.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.845871</td>
-      <td>-76.998169</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52172</th>
-      <td>Was-001378</td>
-      <td>20160415</td>
-      <td>IVEY</td>
-      <td>PAUL</td>
-      <td>Black</td>
-      <td>37.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.826458</td>
-      <td>-77.003590</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52173</th>
-      <td>Was-001379</td>
-      <td>20160715</td>
-      <td>HARRIS</td>
-      <td>SHAROD</td>
-      <td>Black</td>
-      <td>20.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.827266</td>
-      <td>-77.001572</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52174</th>
-      <td>Was-001380</td>
-      <td>20160908</td>
-      <td>WILLIAMS</td>
-      <td>EVAN</td>
-      <td>Black</td>
-      <td>29.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.828704</td>
-      <td>-77.002075</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>52175</th>
-      <td>Was-001381</td>
-      <td>20160913</td>
-      <td>SMITH</td>
-      <td>DEON</td>
-      <td>Black</td>
-      <td>19.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.822852</td>
-      <td>-77.001725</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52176</th>
-      <td>Was-001382</td>
-      <td>20161114</td>
-      <td>WASHINGTON</td>
-      <td>WILLIE</td>
-      <td>Black</td>
-      <td>23.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.828025</td>
-      <td>-77.002511</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52177</th>
-      <td>Was-001383</td>
-      <td>20161130</td>
-      <td>BARNES</td>
-      <td>MARCUS</td>
-      <td>Black</td>
-      <td>24.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.820476</td>
-      <td>-77.008640</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>52178</th>
-      <td>Was-001384</td>
-      <td>20160901</td>
-      <td>JACKSON</td>
-      <td>KEVIN</td>
-      <td>Black</td>
-      <td>17.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.866689</td>
-      <td>-76.982409</td>
-      <td>Closed by arrest</td>
-    </tr>
-  </tbody>
-</table>
-<p>52179 rows × 12 columns</p>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By default, <code>read_csv</code> assumes a comma separator, but this could be customized by adding the  <code>sep=</code> parameter. So a pipe-delimited version of the file could be read with:</p>
@@ -1102,383 +110,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">)</span>
 </pre></div>
-<p>Text files may also include special characters, such as 😎 which can be written as <code>\U0001f60e</code></p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\U0001f60e</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>😎
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this case, you might need to set the encoding parameter. With most CSV, files, unfortunately, this is usually a process of trial and error:</p>
-
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">csv_url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/washingtonpost/data-homicides/master/homicide-data.csv&#39;</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">gaierror</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">do_open</span><span class="ansi-blue-fg">(self, http_class, req, **http_conn_args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1316</span>                 h.request(req.get_method(), req.selector, req.data, headers,
-<span class="ansi-green-fg">-&gt; 1317</span><span class="ansi-red-fg">                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
-</span><span class="ansi-green-intense-fg ansi-bold">   1318</span>             <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> err<span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># timeout error</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, body, headers, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1228</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Send a complete request to the server.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">-&gt; 1229</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_send_request<span class="ansi-blue-fg">(</span>method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> body<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">,</span> encode_chunked<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1230</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">_send_request</span><span class="ansi-blue-fg">(self, method, url, body, headers, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1274</span>             body <span class="ansi-blue-fg">=</span> _encode<span class="ansi-blue-fg">(</span>body<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;body&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1275</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>endheaders<span class="ansi-blue-fg">(</span>body<span class="ansi-blue-fg">,</span> encode_chunked<span class="ansi-blue-fg">=</span>encode_chunked<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1276</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">endheaders</span><span class="ansi-blue-fg">(self, message_body, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1223</span>             <span class="ansi-green-fg">raise</span> CannotSendHeader<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1224</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_send_output<span class="ansi-blue-fg">(</span>message_body<span class="ansi-blue-fg">,</span> encode_chunked<span class="ansi-blue-fg">=</span>encode_chunked<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1225</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">_send_output</span><span class="ansi-blue-fg">(self, message_body, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1015</span>         <span class="ansi-green-fg">del</span> self<span class="ansi-blue-fg">.</span>_buffer<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">-&gt; 1016</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>send<span class="ansi-blue-fg">(</span>msg<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1017</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    955</span>             <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>auto_open<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 956</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    957</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">connect</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1383</span> 
-<span class="ansi-green-fg">-&gt; 1384</span><span class="ansi-red-fg">             </span>super<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1385</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">connect</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    927</span>         self.sock = self._create_connection(
-<span class="ansi-green-fg">--&gt; 928</span><span class="ansi-red-fg">             (self.host,self.port), self.timeout, self.source_address)
-</span><span class="ansi-green-intense-fg ansi-bold">    929</span>         self<span class="ansi-blue-fg">.</span>sock<span class="ansi-blue-fg">.</span>setsockopt<span class="ansi-blue-fg">(</span>socket<span class="ansi-blue-fg">.</span>IPPROTO_TCP<span class="ansi-blue-fg">,</span> socket<span class="ansi-blue-fg">.</span>TCP_NODELAY<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/socket.py</span> in <span class="ansi-cyan-fg">create_connection</span><span class="ansi-blue-fg">(address, timeout, source_address)</span>
-<span class="ansi-green-intense-fg ansi-bold">    706</span>     err <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-fg">--&gt; 707</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">for</span> res <span class="ansi-green-fg">in</span> getaddrinfo<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> SOCK_STREAM<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    708</span>         af<span class="ansi-blue-fg">,</span> socktype<span class="ansi-blue-fg">,</span> proto<span class="ansi-blue-fg">,</span> canonname<span class="ansi-blue-fg">,</span> sa <span class="ansi-blue-fg">=</span> res
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/socket.py</span> in <span class="ansi-cyan-fg">getaddrinfo</span><span class="ansi-blue-fg">(host, port, family, type, proto, flags)</span>
-<span class="ansi-green-intense-fg ansi-bold">    747</span>     addrlist <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">--&gt; 748</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">for</span> res <span class="ansi-green-fg">in</span> _socket<span class="ansi-blue-fg">.</span>getaddrinfo<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">,</span> family<span class="ansi-blue-fg">,</span> type<span class="ansi-blue-fg">,</span> proto<span class="ansi-blue-fg">,</span> flags<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    749</span>         af<span class="ansi-blue-fg">,</span> socktype<span class="ansi-blue-fg">,</span> proto<span class="ansi-blue-fg">,</span> canonname<span class="ansi-blue-fg">,</span> sa <span class="ansi-blue-fg">=</span> res
-
-<span class="ansi-red-fg">gaierror</span>: [Errno 8] nodename nor servname provided, or not known
-
-During handling of the above exception, another exception occurred:
-
-<span class="ansi-red-fg">URLError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-b22410d5c52a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> csv_url <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;https://raw.githubusercontent.com/washingtonpost/data-homicides/master/homicide-data.csv&#39;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>df <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>read_csv<span class="ansi-blue-fg">(</span>csv_url<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ansi-cyan-fg">parser_f</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, tupleize_cols, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="ansi-green-intense-fg ansi-bold">    700</span>                     skip_blank_lines=skip_blank_lines)
-<span class="ansi-green-intense-fg ansi-bold">    701</span> 
-<span class="ansi-green-fg">--&gt; 702</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> _read<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">,</span> kwds<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    703</span> 
-<span class="ansi-green-intense-fg ansi-bold">    704</span>     parser_f<span class="ansi-blue-fg">.</span>__name__ <span class="ansi-blue-fg">=</span> name
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">    411</span>     compression <span class="ansi-blue-fg">=</span> _infer_compression<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">,</span> compression<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    412</span>     filepath_or_buffer, _, compression, should_close = get_filepath_or_buffer(
-<span class="ansi-green-fg">--&gt; 413</span><span class="ansi-red-fg">         filepath_or_buffer, encoding, compression)
-</span><span class="ansi-green-intense-fg ansi-bold">    414</span>     kwds<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;compression&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> compression
-<span class="ansi-green-intense-fg ansi-bold">    415</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ansi-cyan-fg">get_filepath_or_buffer</span><span class="ansi-blue-fg">(filepath_or_buffer, encoding, compression, mode)</span>
-<span class="ansi-green-intense-fg ansi-bold">    200</span> 
-<span class="ansi-green-intense-fg ansi-bold">    201</span>     <span class="ansi-green-fg">if</span> _is_url<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 202</span><span class="ansi-red-fg">         </span>req <span class="ansi-blue-fg">=</span> _urlopen<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    203</span>         content_encoding <span class="ansi-blue-fg">=</span> req<span class="ansi-blue-fg">.</span>headers<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Content-Encoding&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    204</span>         <span class="ansi-green-fg">if</span> content_encoding <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;gzip&#39;</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-fg">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    221</span>         opener <span class="ansi-blue-fg">=</span> _opener
-<span class="ansi-green-fg">--&gt; 222</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> opener<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span> 
-<span class="ansi-green-intense-fg ansi-bold">    224</span> <span class="ansi-green-fg">def</span> install_opener<span class="ansi-blue-fg">(</span>opener<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(self, fullurl, data, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    523</span>             req <span class="ansi-blue-fg">=</span> meth<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    524</span> 
-<span class="ansi-green-fg">--&gt; 525</span><span class="ansi-red-fg">         </span>response <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_open<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    526</span> 
-<span class="ansi-green-intense-fg ansi-bold">    527</span>         <span class="ansi-red-fg"># post-process response</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">_open</span><span class="ansi-blue-fg">(self, req, data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    541</span>         protocol <span class="ansi-blue-fg">=</span> req<span class="ansi-blue-fg">.</span>type
-<span class="ansi-green-intense-fg ansi-bold">    542</span>         result = self._call_chain(self.handle_open, protocol, protocol +
-<span class="ansi-green-fg">--&gt; 543</span><span class="ansi-red-fg">                                   &#39;_open&#39;, req)
-</span><span class="ansi-green-intense-fg ansi-bold">    544</span>         <span class="ansi-green-fg">if</span> result<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    545</span>             <span class="ansi-green-fg">return</span> result
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">_call_chain</span><span class="ansi-blue-fg">(self, chain, kind, meth_name, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">    501</span>         <span class="ansi-green-fg">for</span> handler <span class="ansi-green-fg">in</span> handlers<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    502</span>             func <span class="ansi-blue-fg">=</span> getattr<span class="ansi-blue-fg">(</span>handler<span class="ansi-blue-fg">,</span> meth_name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 503</span><span class="ansi-red-fg">             </span>result <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    504</span>             <span class="ansi-green-fg">if</span> result <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    505</span>                 <span class="ansi-green-fg">return</span> result
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">https_open</span><span class="ansi-blue-fg">(self, req)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1358</span>         <span class="ansi-green-fg">def</span> https_open<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> req<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1359</span>             return self.do_open(http.client.HTTPSConnection, req,
-<span class="ansi-green-fg">-&gt; 1360</span><span class="ansi-red-fg">                 context=self._context, check_hostname=self._check_hostname)
-</span><span class="ansi-green-intense-fg ansi-bold">   1361</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1362</span>         https_request <span class="ansi-blue-fg">=</span> AbstractHTTPHandler<span class="ansi-blue-fg">.</span>do_request_
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">do_open</span><span class="ansi-blue-fg">(self, http_class, req, **http_conn_args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1317</span>                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
-<span class="ansi-green-intense-fg ansi-bold">   1318</span>             <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> err<span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># timeout error</span>
-<span class="ansi-green-fg">-&gt; 1319</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> URLError<span class="ansi-blue-fg">(</span>err<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1320</span>             r <span class="ansi-blue-fg">=</span> h<span class="ansi-blue-fg">.</span>getresponse<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1321</span>         <span class="ansi-green-fg">except</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">URLError</span>: &lt;urlopen error [Errno 8] nodename nor servname provided, or not known&gt;</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;iso-8859-1&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">gaierror</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">do_open</span><span class="ansi-blue-fg">(self, http_class, req, **http_conn_args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1316</span>                 h.request(req.get_method(), req.selector, req.data, headers,
-<span class="ansi-green-fg">-&gt; 1317</span><span class="ansi-red-fg">                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
-</span><span class="ansi-green-intense-fg ansi-bold">   1318</span>             <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> err<span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># timeout error</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, body, headers, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1228</span>         <span class="ansi-blue-fg">&#34;&#34;&#34;Send a complete request to the server.&#34;&#34;&#34;</span>
-<span class="ansi-green-fg">-&gt; 1229</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_send_request<span class="ansi-blue-fg">(</span>method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> body<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">,</span> encode_chunked<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1230</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">_send_request</span><span class="ansi-blue-fg">(self, method, url, body, headers, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1274</span>             body <span class="ansi-blue-fg">=</span> _encode<span class="ansi-blue-fg">(</span>body<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;body&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1275</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>endheaders<span class="ansi-blue-fg">(</span>body<span class="ansi-blue-fg">,</span> encode_chunked<span class="ansi-blue-fg">=</span>encode_chunked<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1276</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">endheaders</span><span class="ansi-blue-fg">(self, message_body, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1223</span>             <span class="ansi-green-fg">raise</span> CannotSendHeader<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1224</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_send_output<span class="ansi-blue-fg">(</span>message_body<span class="ansi-blue-fg">,</span> encode_chunked<span class="ansi-blue-fg">=</span>encode_chunked<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1225</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">_send_output</span><span class="ansi-blue-fg">(self, message_body, encode_chunked)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1015</span>         <span class="ansi-green-fg">del</span> self<span class="ansi-blue-fg">.</span>_buffer<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">-&gt; 1016</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>send<span class="ansi-blue-fg">(</span>msg<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1017</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    955</span>             <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>auto_open<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 956</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    957</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">connect</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1383</span> 
-<span class="ansi-green-fg">-&gt; 1384</span><span class="ansi-red-fg">             </span>super<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>connect<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1385</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/http/client.py</span> in <span class="ansi-cyan-fg">connect</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    927</span>         self.sock = self._create_connection(
-<span class="ansi-green-fg">--&gt; 928</span><span class="ansi-red-fg">             (self.host,self.port), self.timeout, self.source_address)
-</span><span class="ansi-green-intense-fg ansi-bold">    929</span>         self<span class="ansi-blue-fg">.</span>sock<span class="ansi-blue-fg">.</span>setsockopt<span class="ansi-blue-fg">(</span>socket<span class="ansi-blue-fg">.</span>IPPROTO_TCP<span class="ansi-blue-fg">,</span> socket<span class="ansi-blue-fg">.</span>TCP_NODELAY<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/socket.py</span> in <span class="ansi-cyan-fg">create_connection</span><span class="ansi-blue-fg">(address, timeout, source_address)</span>
-<span class="ansi-green-intense-fg ansi-bold">    706</span>     err <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-fg">--&gt; 707</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">for</span> res <span class="ansi-green-fg">in</span> getaddrinfo<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span> SOCK_STREAM<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    708</span>         af<span class="ansi-blue-fg">,</span> socktype<span class="ansi-blue-fg">,</span> proto<span class="ansi-blue-fg">,</span> canonname<span class="ansi-blue-fg">,</span> sa <span class="ansi-blue-fg">=</span> res
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/socket.py</span> in <span class="ansi-cyan-fg">getaddrinfo</span><span class="ansi-blue-fg">(host, port, family, type, proto, flags)</span>
-<span class="ansi-green-intense-fg ansi-bold">    747</span>     addrlist <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">--&gt; 748</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">for</span> res <span class="ansi-green-fg">in</span> _socket<span class="ansi-blue-fg">.</span>getaddrinfo<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">,</span> family<span class="ansi-blue-fg">,</span> type<span class="ansi-blue-fg">,</span> proto<span class="ansi-blue-fg">,</span> flags<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    749</span>         af<span class="ansi-blue-fg">,</span> socktype<span class="ansi-blue-fg">,</span> proto<span class="ansi-blue-fg">,</span> canonname<span class="ansi-blue-fg">,</span> sa <span class="ansi-blue-fg">=</span> res
-
-<span class="ansi-red-fg">gaierror</span>: [Errno 8] nodename nor servname provided, or not known
-
-During handling of the above exception, another exception occurred:
-
-<span class="ansi-red-fg">URLError</span>                                  Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-6-05ea05fcdd30&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>df <span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>read_csv<span class="ansi-blue-fg">(</span>csv_url<span class="ansi-blue-fg">,</span> encoding<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#39;iso-8859-1&#39;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ansi-cyan-fg">parser_f</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, dialect, tupleize_cols, error_bad_lines, warn_bad_lines, delim_whitespace, low_memory, memory_map, float_precision)</span>
-<span class="ansi-green-intense-fg ansi-bold">    700</span>                     skip_blank_lines=skip_blank_lines)
-<span class="ansi-green-intense-fg ansi-bold">    701</span> 
-<span class="ansi-green-fg">--&gt; 702</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> _read<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">,</span> kwds<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    703</span> 
-<span class="ansi-green-intense-fg ansi-bold">    704</span>     parser_f<span class="ansi-blue-fg">.</span>__name__ <span class="ansi-blue-fg">=</span> name
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/site-packages/pandas/io/parsers.py</span> in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">    411</span>     compression <span class="ansi-blue-fg">=</span> _infer_compression<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">,</span> compression<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    412</span>     filepath_or_buffer, _, compression, should_close = get_filepath_or_buffer(
-<span class="ansi-green-fg">--&gt; 413</span><span class="ansi-red-fg">         filepath_or_buffer, encoding, compression)
-</span><span class="ansi-green-intense-fg ansi-bold">    414</span>     kwds<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;compression&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> compression
-<span class="ansi-green-intense-fg ansi-bold">    415</span> 
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/site-packages/pandas/io/common.py</span> in <span class="ansi-cyan-fg">get_filepath_or_buffer</span><span class="ansi-blue-fg">(filepath_or_buffer, encoding, compression, mode)</span>
-<span class="ansi-green-intense-fg ansi-bold">    200</span> 
-<span class="ansi-green-intense-fg ansi-bold">    201</span>     <span class="ansi-green-fg">if</span> _is_url<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 202</span><span class="ansi-red-fg">         </span>req <span class="ansi-blue-fg">=</span> _urlopen<span class="ansi-blue-fg">(</span>filepath_or_buffer<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    203</span>         content_encoding <span class="ansi-blue-fg">=</span> req<span class="ansi-blue-fg">.</span>headers<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;Content-Encoding&#39;</span><span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    204</span>         <span class="ansi-green-fg">if</span> content_encoding <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#39;gzip&#39;</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-fg">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="ansi-green-intense-fg ansi-bold">    220</span>     <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    221</span>         opener <span class="ansi-blue-fg">=</span> _opener
-<span class="ansi-green-fg">--&gt; 222</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">return</span> opener<span class="ansi-blue-fg">.</span>open<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span> 
-<span class="ansi-green-intense-fg ansi-bold">    224</span> <span class="ansi-green-fg">def</span> install_opener<span class="ansi-blue-fg">(</span>opener<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">open</span><span class="ansi-blue-fg">(self, fullurl, data, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    523</span>             req <span class="ansi-blue-fg">=</span> meth<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    524</span> 
-<span class="ansi-green-fg">--&gt; 525</span><span class="ansi-red-fg">         </span>response <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_open<span class="ansi-blue-fg">(</span>req<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    526</span> 
-<span class="ansi-green-intense-fg ansi-bold">    527</span>         <span class="ansi-red-fg"># post-process response</span>
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">_open</span><span class="ansi-blue-fg">(self, req, data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    541</span>         protocol <span class="ansi-blue-fg">=</span> req<span class="ansi-blue-fg">.</span>type
-<span class="ansi-green-intense-fg ansi-bold">    542</span>         result = self._call_chain(self.handle_open, protocol, protocol +
-<span class="ansi-green-fg">--&gt; 543</span><span class="ansi-red-fg">                                   &#39;_open&#39;, req)
-</span><span class="ansi-green-intense-fg ansi-bold">    544</span>         <span class="ansi-green-fg">if</span> result<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    545</span>             <span class="ansi-green-fg">return</span> result
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">_call_chain</span><span class="ansi-blue-fg">(self, chain, kind, meth_name, *args)</span>
-<span class="ansi-green-intense-fg ansi-bold">    501</span>         <span class="ansi-green-fg">for</span> handler <span class="ansi-green-fg">in</span> handlers<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    502</span>             func <span class="ansi-blue-fg">=</span> getattr<span class="ansi-blue-fg">(</span>handler<span class="ansi-blue-fg">,</span> meth_name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 503</span><span class="ansi-red-fg">             </span>result <span class="ansi-blue-fg">=</span> func<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>args<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    504</span>             <span class="ansi-green-fg">if</span> result <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    505</span>                 <span class="ansi-green-fg">return</span> result
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">https_open</span><span class="ansi-blue-fg">(self, req)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1358</span>         <span class="ansi-green-fg">def</span> https_open<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> req<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1359</span>             return self.do_open(http.client.HTTPSConnection, req,
-<span class="ansi-green-fg">-&gt; 1360</span><span class="ansi-red-fg">                 context=self._context, check_hostname=self._check_hostname)
-</span><span class="ansi-green-intense-fg ansi-bold">   1361</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1362</span>         https_request <span class="ansi-blue-fg">=</span> AbstractHTTPHandler<span class="ansi-blue-fg">.</span>do_request_
-
-<span class="ansi-green-fg">~/anaconda3/envs/new_anaconda/lib/python3.7/urllib/request.py</span> in <span class="ansi-cyan-fg">do_open</span><span class="ansi-blue-fg">(self, http_class, req, **http_conn_args)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1317</span>                           encode_chunked=req.has_header(&#39;Transfer-encoding&#39;))
-<span class="ansi-green-intense-fg ansi-bold">   1318</span>             <span class="ansi-green-fg">except</span> OSError <span class="ansi-green-fg">as</span> err<span class="ansi-blue-fg">:</span> <span class="ansi-red-fg"># timeout error</span>
-<span class="ansi-green-fg">-&gt; 1319</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> URLError<span class="ansi-blue-fg">(</span>err<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1320</span>             r <span class="ansi-blue-fg">=</span> h<span class="ansi-blue-fg">.</span>getresponse<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1321</span>         <span class="ansi-green-fg">except</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">URLError</span>: &lt;urlopen error [Errno 8] nodename nor servname provided, or not known&gt;</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this case, the csv file was not encoding in utf-8, but <code>iso-8859-1</code>, also know as <code>latin1</code>. According to <a href="https://w3techs.com/technologies/overview/character_encoding/all">someone one the intenet</a>, the most frequently used encodings on the web are:</p>
-<ol>
-<li>UTF-8 (92% of web pages) - Default for Python 3.x</li>
-<li>ISO-8859-1 (4%) (<code>encoding = iso-8859-1</code> or <code>encoding = latin1</code>)</li>
-<li>Windows-1251 (1%) - Used for Cyrillic script (<code>encoding = windows-1251</code>)</li>
-<li>Windows-1252 (&lt;1%) - Old fork of ISO-8859-1 (<code>encoding = windows-1252</code>)</li>
-<li>Shift JIS (&lt;1%) - Japanese characters  (<code>encoding = shift-jis</code>)</li>
-</ol>
-<p>You might need to Google around for other langauage specific encodings.</p>
 
 </div>
 </div>
@@ -1489,7 +120,7 @@ During handling of the above exception, another exception occurred:
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Learning-about-your-dataframe">Learning about your dataframe<a class="anchor-link" href="#Learning-about-your-dataframe"> </a></h4><p>After loading a dataframe, best practice is to get a sense of the data with the <code>head</code>, <code>info</code> and <code>describe</code> methods. <code>head</code> shows the first five rows of the dataframe.</p>
+<h1 id="Learning-about-your-dataframe">Learning about your dataframe<a class="anchor-link" href="#Learning-about-your-dataframe"> </a></h1><p>After loading a dataframe, best practice is to get a sense of the data with the <code>head</code>, <code>sample</code>, <code>info</code> and <code>describe</code> methods. <code>head</code> shows the first five rows of the dataframe.</p>
 
 </div>
 </div>
@@ -1644,6 +275,155 @@ During handling of the above exception, another exception occurred:
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In addition to the data in the csv file, an index has been created to identifiy each row. By default, this is an interger starting with 0.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It can also be usefl to examine random data rows using <code>sample</code>. In this case, I'll look at four random rows.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>uid</th>
+      <th>reported_date</th>
+      <th>victim_last</th>
+      <th>victim_first</th>
+      <th>victim_race</th>
+      <th>victim_age</th>
+      <th>victim_sex</th>
+      <th>city</th>
+      <th>state</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>disposition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>36039</th>
+      <td>NO-000078</td>
+      <td>20100419</td>
+      <td>ANDERSON</td>
+      <td>TRAVIS</td>
+      <td>Black</td>
+      <td>25.0</td>
+      <td>Male</td>
+      <td>New Orleans</td>
+      <td>LA</td>
+      <td>30.046430</td>
+      <td>-89.958851</td>
+      <td>Closed by arrest</td>
+    </tr>
+    <tr>
+      <th>28804</th>
+      <td>Los-000177</td>
+      <td>20100617</td>
+      <td>Unknown</td>
+      <td>Unknown</td>
+      <td>Black</td>
+      <td>24.0</td>
+      <td>Female</td>
+      <td>Los Angeles</td>
+      <td>CA</td>
+      <td>33.997600</td>
+      <td>-118.258700</td>
+      <td>Closed by arrest</td>
+    </tr>
+    <tr>
+      <th>33018</th>
+      <td>Mia-000049</td>
+      <td>20070716</td>
+      <td>JOHNSON</td>
+      <td>GERALD</td>
+      <td>Unknown</td>
+      <td>46.0</td>
+      <td>Unknown</td>
+      <td>Miami</td>
+      <td>FL</td>
+      <td>25.788309</td>
+      <td>-80.197654</td>
+      <td>Closed by arrest</td>
+    </tr>
+    <tr>
+      <th>11730</th>
+      <td>Chi-007790</td>
+      <td>20160802</td>
+      <td>DOE</td>
+      <td>JANE</td>
+      <td>Other</td>
+      <td>20.0</td>
+      <td>Female</td>
+      <td>Chicago</td>
+      <td>IL</td>
+      <td>41.711641</td>
+      <td>-87.626357</td>
+      <td>Open/No arrest</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>If the dataset is wide, middle columns will not be displayed. Also, if text fields are long, only the first few characters will be shown. These can both be adjusted using pandas <a href="https://pandas.pydata.org/pandas-docs/stable/options.html">display settings</a>.</p>
 
 </div>
@@ -1691,14 +471,14 @@ reported_date    52179 non-null int64
 victim_last      52179 non-null object
 victim_first     52179 non-null object
 victim_race      52179 non-null object
-victim_age       52179 non-null object
+victim_age       49180 non-null float64
 victim_sex       52179 non-null object
 city             52179 non-null object
 state            52179 non-null object
 lat              52119 non-null float64
 lon              52119 non-null float64
 disposition      52179 non-null object
-dtypes: float64(2), int64(1), object(9)
+dtypes: float64(3), int64(1), object(8)
 memory usage: 4.8+ MB
 </pre>
 </div>
@@ -1765,7 +545,6 @@ memory usage: 4.8+ MB
       <th>victim_age</th>
       <th>lat</th>
       <th>lon</th>
-      <th>victim_age_numeric</th>
     </tr>
   </thead>
   <tbody>
@@ -1775,7 +554,6 @@ memory usage: 4.8+ MB
       <td>49180.000000</td>
       <td>52119.000000</td>
       <td>52119.000000</td>
-      <td>49180.000000</td>
     </tr>
     <tr>
       <th>mean</th>
@@ -1783,7 +561,6 @@ memory usage: 4.8+ MB
       <td>31.801220</td>
       <td>37.026786</td>
       <td>-91.471094</td>
-      <td>31.801220</td>
     </tr>
     <tr>
       <th>std</th>
@@ -1791,7 +568,6 @@ memory usage: 4.8+ MB
       <td>14.418692</td>
       <td>4.348647</td>
       <td>13.746378</td>
-      <td>14.418692</td>
     </tr>
     <tr>
       <th>min</th>
@@ -1799,7 +575,6 @@ memory usage: 4.8+ MB
       <td>0.000000</td>
       <td>25.725214</td>
       <td>-122.507779</td>
-      <td>0.000000</td>
     </tr>
     <tr>
       <th>25%</th>
@@ -1807,7 +582,6 @@ memory usage: 4.8+ MB
       <td>22.000000</td>
       <td>33.765203</td>
       <td>-95.997198</td>
-      <td>22.000000</td>
     </tr>
     <tr>
       <th>50%</th>
@@ -1815,7 +589,6 @@ memory usage: 4.8+ MB
       <td>28.000000</td>
       <td>38.524973</td>
       <td>-87.710286</td>
-      <td>28.000000</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -1823,7 +596,6 @@ memory usage: 4.8+ MB
       <td>40.000000</td>
       <td>40.027627</td>
       <td>-81.755909</td>
-      <td>40.000000</td>
     </tr>
     <tr>
       <th>max</th>
@@ -1831,7 +603,6 @@ memory usage: 4.8+ MB
       <td>102.000000</td>
       <td>45.051190</td>
       <td>-71.011519</td>
-      <td>102.000000</td>
     </tr>
   </tbody>
 </table>
@@ -1882,7 +653,7 @@ memory usage: 4.8+ MB
 <div class="output_text output_subarea output_execute_result">
 <pre>Index([&#39;uid&#39;, &#39;reported_date&#39;, &#39;victim_last&#39;, &#39;victim_first&#39;, &#39;victim_race&#39;,
        &#39;victim_age&#39;, &#39;victim_sex&#39;, &#39;city&#39;, &#39;state&#39;, &#39;lat&#39;, &#39;lon&#39;,
-       &#39;disposition&#39;, &#39;victim_age_numeric&#39;],
+       &#39;disposition&#39;],
       dtype=&#39;object&#39;)</pre>
 </div>
 
@@ -1957,7 +728,6 @@ memory usage: 4.8+ MB
       <th>lat</th>
       <th>lon</th>
       <th>disposition</th>
-      <th>victim_age_numeric</th>
     </tr>
   </thead>
   <tbody>
@@ -1975,7 +745,6 @@ memory usage: 4.8+ MB
       <td>38.828025</td>
       <td>-77.002511</td>
       <td>Open/No arrest</td>
-      <td>23.0</td>
     </tr>
     <tr>
       <th>52177</th>
@@ -1991,7 +760,6 @@ memory usage: 4.8+ MB
       <td>38.820476</td>
       <td>-77.008640</td>
       <td>Open/No arrest</td>
-      <td>24.0</td>
     </tr>
     <tr>
       <th>52178</th>
@@ -2007,7 +775,6 @@ memory usage: 4.8+ MB
       <td>38.866689</td>
       <td>-76.982409</td>
       <td>Closed by arrest</td>
-      <td>17.0</td>
     </tr>
   </tbody>
 </table>
@@ -2089,79 +856,79 @@ memory usage: 4.8+ MB
   </thead>
   <tbody>
     <tr>
-      <th>34260</th>
-      <td>Mil-000542</td>
-      <td>20131220</td>
-      <td>EVANS</td>
-      <td>REGINALD</td>
+      <th>3536</th>
+      <td>Bal-003797</td>
+      <td>20160205</td>
+      <td>KELLY</td>
+      <td>SABRINA ANTWINETTE</td>
       <td>Black</td>
-      <td>21.0</td>
+      <td>53.0</td>
+      <td>Female</td>
+      <td>Baltimore</td>
+      <td>MD</td>
+      <td>39.311930</td>
+      <td>-76.604818</td>
+      <td>Open/No arrest</td>
+    </tr>
+    <tr>
+      <th>4813</th>
+      <td>Bir-000214</td>
+      <td>20150903</td>
+      <td>DILWORTH</td>
+      <td>MICHAEL</td>
+      <td>Black</td>
+      <td>30.0</td>
       <td>Male</td>
-      <td>Milwaukee</td>
-      <td>wI</td>
-      <td>43.071811</td>
-      <td>-87.888169</td>
+      <td>Birmingham</td>
+      <td>AL</td>
+      <td>33.494196</td>
+      <td>-86.828743</td>
+      <td>Open/No arrest</td>
+    </tr>
+    <tr>
+      <th>51386</th>
+      <td>Was-000576</td>
+      <td>20111026</td>
+      <td>WIGGINS</td>
+      <td>ANDRE</td>
+      <td>Black</td>
+      <td>19.0</td>
+      <td>Male</td>
+      <td>Washington</td>
+      <td>DC</td>
+      <td>38.893322</td>
+      <td>-76.926156</td>
       <td>Closed by arrest</td>
     </tr>
     <tr>
-      <th>35978</th>
-      <td>NO-000017</td>
-      <td>20100112</td>
-      <td>Unknown</td>
-      <td>Unknown</td>
+      <th>40816</th>
+      <td>Phi-000779</td>
+      <td>20120123</td>
+      <td>ANDERSON</td>
+      <td>RASHI</td>
       <td>Black</td>
-      <td>15.0</td>
+      <td>17.0</td>
+      <td>Male</td>
+      <td>Philadelphia</td>
+      <td>PA</td>
+      <td>40.050521</td>
+      <td>-75.155445</td>
+      <td>Closed by arrest</td>
+    </tr>
+    <tr>
+      <th>37070</th>
+      <td>NO-001112</td>
+      <td>20160131</td>
+      <td>LEE</td>
+      <td>KEITH</td>
+      <td>Black</td>
+      <td>19.0</td>
       <td>Male</td>
       <td>New Orleans</td>
       <td>LA</td>
-      <td>30.033230</td>
-      <td>-90.019913</td>
+      <td>30.008786</td>
+      <td>-90.018885</td>
       <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>17171</th>
-      <td>Det-000757</td>
-      <td>20161012</td>
-      <td>HATEN</td>
-      <td>QUASSHIE</td>
-      <td>Black</td>
-      <td>23.0</td>
-      <td>Male</td>
-      <td>Detroit</td>
-      <td>MI</td>
-      <td>42.375000</td>
-      <td>-83.095565</td>
-      <td>Closed by arrest</td>
-    </tr>
-    <tr>
-      <th>33338</th>
-      <td>Mia-000394</td>
-      <td>20120806</td>
-      <td>CRESPO</td>
-      <td>RAFAEL ANGEL</td>
-      <td>Hispanic</td>
-      <td>59.0</td>
-      <td>Male</td>
-      <td>Miami</td>
-      <td>FL</td>
-      <td>25.786997</td>
-      <td>-80.222974</td>
-      <td>Open/No arrest</td>
-    </tr>
-    <tr>
-      <th>33411</th>
-      <td>Mia-000469</td>
-      <td>20130902</td>
-      <td>HYPPOLITE</td>
-      <td>DEMETRIUS</td>
-      <td>Black</td>
-      <td>26.0</td>
-      <td>Male</td>
-      <td>Miami</td>
-      <td>FL</td>
-      <td>25.791375</td>
-      <td>-80.198676</td>
-      <td>Closed without arrest</td>
     </tr>
   </tbody>
 </table>
@@ -2180,10 +947,8 @@ memory usage: 4.8+ MB
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Display the first four rows of the dataframe <code>df</code>.  
-</div>
+<h2 id="Dataframe-Exercise-1">Dataframe Exercise 1<a class="anchor-link" href="#Dataframe-Exercise-1"> </a></h2><p>Display the first four rows of the dataframe <code>df</code>.</p>
+
 </div>
 </div>
 </div>
@@ -2196,7 +961,24 @@ memory usage: 4.8+ MB
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Type your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2241,134 +1023,6 @@ memory usage: 4.8+ MB
       <th>lat</th>
       <th>lon</th>
       <th>disposition</th>
-      <th>victim_age_numeric</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>52176</th>
-      <td>Was-001382</td>
-      <td>20161114</td>
-      <td>WASHINGTON</td>
-      <td>WILLIE</td>
-      <td>Black</td>
-      <td>23.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.828025</td>
-      <td>-77.002511</td>
-      <td>Open/No arrest</td>
-      <td>23.0</td>
-    </tr>
-    <tr>
-      <th>52177</th>
-      <td>Was-001383</td>
-      <td>20161130</td>
-      <td>BARNES</td>
-      <td>MARCUS</td>
-      <td>Black</td>
-      <td>24.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.820476</td>
-      <td>-77.008640</td>
-      <td>Open/No arrest</td>
-      <td>24.0</td>
-    </tr>
-    <tr>
-      <th>52178</th>
-      <td>Was-001384</td>
-      <td>20160901</td>
-      <td>JACKSON</td>
-      <td>KEVIN</td>
-      <td>Black</td>
-      <td>17.0</td>
-      <td>Male</td>
-      <td>Washington</td>
-      <td>DC</td>
-      <td>38.866689</td>
-      <td>-76.982409</td>
-      <td>Closed by arrest</td>
-      <td>17.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Working-with-variables">Working with variables<a class="anchor-link" href="#Working-with-variables"> </a></h3>
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>uid</th>
-      <th>reported_date</th>
-      <th>victim_last</th>
-      <th>victim_first</th>
-      <th>victim_race</th>
-      <th>victim_age</th>
-      <th>victim_sex</th>
-      <th>city</th>
-      <th>state</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>disposition</th>
-      <th>victim_age_numeric</th>
     </tr>
   </thead>
   <tbody>
@@ -2386,7 +1040,6 @@ memory usage: 4.8+ MB
       <td>35.095788</td>
       <td>-106.538555</td>
       <td>Closed without arrest</td>
-      <td>78.0</td>
     </tr>
     <tr>
       <th>1</th>
@@ -2402,7 +1055,36 @@ memory usage: 4.8+ MB
       <td>35.056810</td>
       <td>-106.715321</td>
       <td>Closed by arrest</td>
-      <td>17.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alb-000003</td>
+      <td>20100601</td>
+      <td>SATTERFIELD</td>
+      <td>VIVIANA</td>
+      <td>White</td>
+      <td>15.0</td>
+      <td>Female</td>
+      <td>Albuquerque</td>
+      <td>NM</td>
+      <td>35.086092</td>
+      <td>-106.695568</td>
+      <td>Closed without arrest</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Alb-000004</td>
+      <td>20100101</td>
+      <td>MENDIOLA</td>
+      <td>CARLOS</td>
+      <td>Hispanic</td>
+      <td>32.0</td>
+      <td>Male</td>
+      <td>Albuquerque</td>
+      <td>NM</td>
+      <td>35.078493</td>
+      <td>-106.556094</td>
+      <td>Closed by arrest</td>
     </tr>
   </tbody>
 </table>
@@ -2414,6 +1096,228 @@ memory usage: 4.8+ MB
 </div>
 </div>
 
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Working-with-variables">Working with variables<a class="anchor-link" href="#Working-with-variables"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a reminder of the contents of the dataframe, here's a radom row.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>uid</th>
+      <th>reported_date</th>
+      <th>victim_last</th>
+      <th>victim_first</th>
+      <th>victim_race</th>
+      <th>victim_age</th>
+      <th>victim_sex</th>
+      <th>city</th>
+      <th>state</th>
+      <th>lat</th>
+      <th>lon</th>
+      <th>disposition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>43781</th>
+      <td>Pho-000689</td>
+      <td>20160716</td>
+      <td>WOOD</td>
+      <td>JENNIFER</td>
+      <td>Unknown</td>
+      <td>NaN</td>
+      <td>Unknown</td>
+      <td>Phoenix</td>
+      <td>AZ</td>
+      <td>33.589536</td>
+      <td>-112.097239</td>
+      <td>Open/No arrest</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can access the contents of a specific column (also knows as a feature or variable) by enclosing the name in brackets, similar to the process that returns the value of a dictionary key.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0        78.0
+1        17.0
+2        15.0
+3        32.0
+4        72.0
+5        91.0
+6        52.0
+7        52.0
+8        56.0
+9        43.0
+10       20.0
+11        NaN
+12       46.0
+13       16.0
+14       54.0
+15       43.0
+16       52.0
+17       52.0
+18       22.0
+19       49.0
+20       15.0
+21       25.0
+22       20.0
+23       47.0
+24       88.0
+25       27.0
+26       36.0
+27       47.0
+28        1.0
+29       58.0
+         ... 
+52149    46.0
+52150    24.0
+52151    35.0
+52152    31.0
+52153    18.0
+52154    40.0
+52155    37.0
+52156    26.0
+52157     3.0
+52158    30.0
+52159    25.0
+52160    19.0
+52161    26.0
+52162    25.0
+52163    27.0
+52164    22.0
+52165    44.0
+52166    25.0
+52167    38.0
+52168    22.0
+52169    22.0
+52170    25.0
+52171    35.0
+52172    37.0
+52173    20.0
+52174    29.0
+52175    19.0
+52176    23.0
+52177    24.0
+52178    17.0
+Name: victim_age, Length: 52179, dtype: float64</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This returns a series containing the index and values for the column. As this has many values, pandas only displays the top and bottom 30 cases.</p>
+<p>The same <code>describe</code> method can be called on a single column.</p>
+
+</div>
+</div>
 </div>
 </div>
 
@@ -2461,12 +1365,23 @@ Name: victim_age, dtype: float64</pre>
 
 <div class="jb_cell">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><code>value_counts</code> methods returns the value frequencies in descending order.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -2482,68 +1397,35 @@ Name: victim_age, dtype: float64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>22.0     2116
-21.0     2097
-23.0     2061
-24.0     1995
-19.0     1976
-20.0     1919
-25.0     1906
-26.0     1778
-18.0     1644
-27.0     1582
-29.0     1554
-28.0     1553
-30.0     1432
-32.0     1224
-31.0     1218
-33.0     1124
-34.0     1112
-17.0     1107
-35.0     1047
-36.0      934
-37.0      869
-38.0      838
-39.0      762
-40.0      744
-16.0      715
-41.0      688
-43.0      675
-42.0      659
-44.0      613
-45.0      606
-         ... 
-6.0        46
-12.0       44
-79.0       44
-7.0        43
-77.0       42
-10.0       41
-83.0       38
-11.0       37
-8.0        34
-84.0       31
-81.0       29
-9.0        29
-85.0       26
-80.0       26
-82.0       26
-86.0       25
-88.0       21
-89.0       18
-90.0       13
-87.0       13
-91.0       11
-93.0        7
-92.0        6
-94.0        5
-95.0        5
-97.0        3
-96.0        2
-99.0        1
-101.0       1
-102.0       1
-Name: victim_age, Length: 101, dtype: int64</pre>
+<pre>CA    6288
+TX    5891
+IL    5535
+PA    3668
+MO    2867
+MD    2827
+MI    2519
+TN    2281
+FL    2120
+LA    1858
+OH    1778
+NV    1381
+DC    1345
+IN    1322
+OK    1255
+GA    1219
+NY    1148
+wI    1115
+NC     963
+AZ     914
+AL     801
+MA     614
+KY     576
+VA     429
+NE     409
+NM     378
+MN     366
+CO     312
+Name: state, dtype: int64</pre>
 </div>
 
 </div>
@@ -2558,7 +1440,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As this has many values, pandas only displays the top and bottom 30 cases. The <code>values</code> method can be used to produce an array containing all the values in order.</p>
+<h2 id="Dataframe-Exercise-2">Dataframe Exercise 2<a class="anchor-link" href="#Dataframe-Exercise-2"> </a></h2><p>Explore the <code>disposition</code> and <code>victim_race</code> columns in the dataframe.</p>
 
 </div>
 </div>
@@ -2567,14 +1449,74 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="jb_cell">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Explore the <code>disposition</code> and <code>victim race</code>   columns in the dataframe.  
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer here</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;disposition&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>Closed by arrest         25674
+Open/No arrest           23583
+Closed without arrest     2922
+Name: disposition, dtype: int64</pre>
+</div>
+
+</div>
+</div>
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea ">
+<pre>Black       33361
+Hispanic     6901
+White        6333
+Unknown      4199
+Other         700
+Asian         685
+Name: victim_race, dtype: int64</pre>
+</div>
+
 </div>
 </div>
 </div>
+</div>
+
 </div>
 </div>
 
@@ -2582,7 +1524,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>All of the values of a specific variables can be extracted.</p>
+<p>If you wanted to store the results, the <code>values</code> method can be used to produce an array containing all the values in order.</p>
 
 </div>
 </div>
@@ -2631,8 +1573,8 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_age</span> <span class="o">=</span> <span class="n">age_values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">first_age</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">first_age</span> <span class="o">=</span> <span class="n">ages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">display</span><span class="p">(</span><span class="n">first_age</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2645,10 +1587,12 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 <div class="jb_output_wrapper }}">
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>78
-</pre>
+
+
+<div class="output_text output_subarea ">
+<pre>78.0</pre>
 </div>
+
 </div>
 </div>
 </div>
@@ -2661,35 +1605,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> Display seven value from the middle of our age variable?
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-info">
-<h3> Your turn</h3>
-<p> A well-known data set is the list of titanic passengers. A version can be found in the data folder called, "titanic.csv". Open the file as a new dataframe <code>titanic_df</code>. How many cases? How many columns? What can you find out about the data?
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Plots">Plots<a class="anchor-link" href="#Plots"> </a></h4><p>pandas also has plotting capabilies, such as histograms (<code>hist</code>) and a correlation matrix (<code>scatter_matrix</code>).</p>
+<h2 id="Dataframe-Exercise-3">Dataframe Exercise 3<a class="anchor-link" href="#Dataframe-Exercise-3"> </a></h2><p>Display seven value from somewhere in the middle of our age variable?</p>
 
 </div>
 </div>
@@ -2703,7 +1619,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Your answer here</span>
 </pre></div>
 
     </div>
@@ -2720,7 +1636,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age_numeric&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ages</span><span class="p">[</span><span class="mi">452</span><span class="p">:</span><span class="mi">459</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -2736,19 +1652,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x126349518&gt;</pre>
-</div>
-
-</div>
-</div>
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-
-<div class="output_png output_subarea ">
-<img src="images/pandas_42_1.png"
->
+<pre>array([ 9., 29., 41., 54., 48., 21., 20.])</pre>
 </div>
 
 </div>
@@ -2763,7 +1667,82 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Plot of individual variables, or series in pandas terminology, are attributes of the data type. That is, you start wit the thing you want plotted, in this case <code>df['victim_age_numeric']</code>, and append what you want to do, such as <code>.hist()</code>.</p>
+<h2 id="Titanic-Exercise-1">Titanic Exercise 1<a class="anchor-link" href="#Titanic-Exercise-1"> </a></h2><p>A well-known data set is the list of titanic passengers. A version can be found in the data folder called, "titanic.csv". Open the file as a new dataframe <code>titanic_df</code>. How many cases? How many columns? What can you find out about the data?</p>
+<p>&lt;/div&gt;</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Plots">Plots<a class="anchor-link" href="#Plots"> </a></h1><p>pandas also has plotting capabilies, such as histograms (<code>hist</code>) and a correlation matrix (<code>scatter_matrix</code>).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="images/pandas_46_0.png"
+>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_race&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Plot of individual variables, or series in pandas terminology, are attributes of the data type. That is, you start wit the thing you want plotted, in this case <code>df['victim_age']</code>, and append what you want to do, such as <code>.hist()</code>.</p>
 <p>A second type of plots, such as scatter plots, are methods of the dataframe.</p>
 
 </div>
@@ -2794,7 +1773,19 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x125d45320&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x116e5ab00&gt;</pre>
+</div>
+
+</div>
+</div>
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_png output_subarea ">
+<img src="images/pandas_49_1.png"
+>
 </div>
 
 </div>
@@ -2848,7 +1839,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">df</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -2863,44 +1854,8 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x126edbb38&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x126f5fc50&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x123e0e208&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x123e3f7b8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x123e71d68&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x123eae358&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1263b8908&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1263eeef0&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1263eef28&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12645ba58&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x12649a048&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1264c95f8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1264fbba8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12653b198&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12656a748&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x12659fcf8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1265da2e8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12660b898&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x126640e48&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12667b438&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x1266af9e8&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1266e2f98&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12671d588&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x126750b38&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12678d128&gt;]],
-      dtype=object)</pre>
-</div>
-
-</div>
-</div>
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-
 <div class="output_png output_subarea ">
-<img src="images/pandas_48_1.png"
+<img src="images/pandas_53_0.png"
 >
 </div>
 
@@ -2930,8 +1885,8 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">by</span>   <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_sex&#39;</span><span class="p">],</span> 
-                              <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_sex&#39;</span><span class="p">],</span>
+                      <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -2946,23 +1901,8 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x127800b38&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x1261ca3c8&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x1284dd390&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x128531940&gt;]],
-      dtype=object)</pre>
-</div>
-
-</div>
-</div>
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-
 <div class="output_png output_subarea ">
-<img src="images/pandas_50_1.png"
+<img src="images/pandas_55_0.png"
 >
 </div>
 
@@ -2992,10 +1932,10 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">by</span>     <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_sex&#39;</span><span class="p">],</span> 
-                              <span class="n">bins</span>   <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
-                              <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-                              <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_age&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;victim_sex&#39;</span><span class="p">],</span>
+                      <span class="n">bins</span>   <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+                      <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+                      <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -3010,23 +1950,8 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 
 
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[&lt;matplotlib.axes._subplots.AxesSubplot object at 0x112254128&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x12873d4e0&gt;],
-       [&lt;matplotlib.axes._subplots.AxesSubplot object at 0x128816780&gt;,
-        &lt;matplotlib.axes._subplots.AxesSubplot object at 0x128626a20&gt;]],
-      dtype=object)</pre>
-</div>
-
-</div>
-</div>
-<div class="jb_output_wrapper }}">
-<div class="output_area">
-
-
-
 <div class="output_png output_subarea ">
-<img src="images/pandas_52_1.png"
+<img src="images/pandas_57_0.png"
 >
 </div>
 
@@ -3565,7 +2490,7 @@ Name: victim_age, Length: 101, dtype: int64</pre>
 
 
 <div class="output_png output_subarea ">
-<img src="images/pandas_64_1.png"
+<img src="images/pandas_69_1.png"
 >
 </div>
 
@@ -4073,7 +2998,7 @@ Name: year, dtype: int64</pre>
 
 
 <div class="output_png output_subarea ">
-<img src="images/pandas_79_1.png"
+<img src="images/pandas_84_1.png"
 >
 </div>
 
