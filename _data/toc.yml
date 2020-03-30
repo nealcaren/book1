@@ -21,10 +21,10 @@
 #
 # See the links below for an example.
 
-# Top-level page
-- title: Home
-  url: /intro
-  not_numbered: true
+## Top-level page
+#- title: Home
+#  url: /intro
+#  not_numbered: true
 
 # External link
 #- title: GitHub repository
